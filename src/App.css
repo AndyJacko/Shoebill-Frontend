@@ -1,0 +1,188 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap");
+
+.App {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  font-family: "Nunito", sans-serif;
+}
+
+.App .openModalBtn {
+  width: 200px;
+  height: 40px;
+  border: none;
+  border-radius: 6px;
+  background-color: cornflowerblue;
+  color: white;
+  cursor: pointer;
+}
+body {
+  padding: 0;
+  margin: 0;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.catpics {
+  margin: 10px;
+  padding: 10px;
+  display: flex;
+  float: left;
+  position: relative;
+  overflow: hidden;
+}
+
+.catpics img {
+  height: 250px;
+  width: 250px;
+  object-fit: cover;
+}
+
+.catpics .addToCart {
+  position: absolute;
+  inset: 0;
+  font-size: 2rem;
+  padding: 1rem;
+  background: rgba(255, 255, 255, .4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.catpics img,
+.catpics .addToCart {
+  transition: 200ms ease ease-in-out;
+}
+
+.catpics:hover img.blur {
+  filter: blur(3px);
+  transform: scale(1.1);
+}
+
+.catpics .addToCart.fade {
+  opacity: 0;
+}
+
+.catpics:hover .addToCart.fade {
+  opacity: 1;
+}
+
+button {
+  padding: 1.3em 3em;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  font-weight: 500;
+  color: white;
+  background-color: #8d7b6f;
+  border: none;
+  border-radius: 45px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  outline: none;
+}
+
+button:hover {
+  background-color: #23c483;
+  box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+  color: #fff;
+  transform: translateY(-7px);
+}
+
+button:active {
+  transform: translateY(-1px);
+}
+
+nav {
+  background: #8d7b6f;
+  width: 100%;
+  display: block;
+  text-decoration: none;
+  text-align: center;
+  font-size: 17px;
+  padding: 20px 10px;
+  overflow: auto;
+}
+
+h1{
+  text-align: center;
+}
+
+body.active-modal {
+  overflow-y: hidden;
+}
+
+.btn-modal {
+  padding: 10px 20px;
+  display: block;
+  margin: 100px auto 0;
+  font-size: 18px;
+}
+
+.modal, .overlay {
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  position: fixed;
+}
+
+.overlay {
+  background: rgba(49,49,49,0.8);
+}
+.modal-content {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  line-height: 1.4;
+  background: #f1f1f1;
+  padding: 14px 28px;
+  border-radius: 3px;
+  max-width: 600px;
+  min-width: 300px;
+}
+
+.close-modal {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 5px 7px;
+}
+
+
+.buttontwo {
+  padding: 1.3em 3em;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  font-weight: 500;
+  color: white;
+  background-color: #23c483;
+  border: none;
+  border-radius: 45px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  outline: none;
+}
+
+.buttontwo:hover {
+  background-color: #23c483;
+  box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+  color: #fff;
+  transform: translateY(-7px);
+}
+
+.buttontwo:active {
+  transform: translateY(-1px);
+}
