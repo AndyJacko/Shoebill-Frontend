@@ -13,23 +13,23 @@ const Update = () => {
             Current Avatar:<img src="https://picsum.photos/200" alt="something"></img>
             <br></br>
             <br></br>
-            <label>Username:
-            <input onClick={("")} />
+            <label>Username
+            <input onClick={("")} placeholder="Username"/>
             </label>
             <br></br>
 
-            <label>Email:
-            <input onClick={("")} />
+            <label>Email
+            <input onClick={("")} placeholder="Email address"/>
             </label>
             <br></br>
 
-            <label>Password:
-                <input onClick={("")} />
+            <label>Password
+                <input onClick={("")} placeholder="Custom avatar URL"/>
             </label>
             <br></br>
 
             <label>Custom avatar URL:
-                <input onClick={("")} />
+                <input onClick={("")} placeholder="Your name"/>
             </label>
             <br></br>
 
@@ -37,8 +37,27 @@ const Update = () => {
             <br></br>
             <button type="password">Submit</button>
 
+
+            <p class="contactform">Name
+            <input id="emailinput" type="text" placeholder="Your name" name="text1" />
+        
+        </p>
+        <p class="contactform">Subject
+            <input id="emailinput" type="text" placeholder="Subject" name="text1"  />
+        
+        </p>
+        <p class="contactform">Message
+            <input id="emailinput" type="text" placeholder="Your message" name="text1" />
+        
+        </p>
+
+
+        <button type="password">Submit</button>
             
         </form>
+
+
+
     )
 }
 
