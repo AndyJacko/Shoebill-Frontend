@@ -4,29 +4,32 @@ const Register = () => {
   const submitHandler = () => {};
 
   return (
-    <form onSubmit={submitHandler}>
-      <br></br>
-      <br></br>
-      <label>
-        Username:
-        <input onClick={""} />
-      </label>
-      <br></br>
+    <form onSubmit = {submitHandler}>
 
-      <label>
-        Email:
-        <input onClick={""} />
-      </label>
-      <br></br>
+<div id="container2"></div><div class="specialheading3">Shoebill Signup
+            <label><p class="contactform">Username
+            <br></br><input onClick={("")} placeholder="Username"/>
+            </p>
+            </label>
 
-      <label>
-        Password:
-        <input onClick={""} />
-      </label>
-      <br></br>
-      <br></br>
-      <button type="password">Register</button>
-    </form>
+            <label><p class="contactform">Email
+            <br></br><input onClick={("")} placeholder="Email address"/>
+            </p>
+            </label>
+
+            <label><p class="contactform">Password
+                <br></br><input onClick={("")} placeholder="Password"/>
+                </p>
+            </label>
+
+            <label><p class="contactform">Custom avatar URL - optional
+                <br></br><input onClick={("")} placeholder="Custom avatar URL"/></p>
+            </label>
+
+            <button type="password">Register</button>
+
+        </div>
+        </form>
   );
 };
 

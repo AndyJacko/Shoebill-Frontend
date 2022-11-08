@@ -9,7 +9,7 @@ const Update = () => {
     return (
         <form onSubmit = {submitHandler}>
 
-<div id="container2"></div><div class="specialheading3">Update your user details
+<div id="container2"></div><div class="specialheading3">Update your account details
 
 
 <br></br>
@@ -18,7 +18,7 @@ const Update = () => {
             <br>
             </br><img src="https://picsum.photos/200" alt="something"></img>
             <label><p class="contactform">Username
-            <input onClick={("")} placeholder="Username"/>
+            <br></br><input onClick={("")} placeholder="Username"/>
             </p>
             </label>
 
@@ -28,12 +28,12 @@ const Update = () => {
             </label>
 
             <label><p class="contactform">Password
-                <input onClick={("")} placeholder="Password"/>
+                <br></br><input onClick={("")} placeholder="Password"/>
                 </p>
             </label>
 
             <label><p class="contactform">Custom avatar URL
-                <input onClick={("")} placeholder="Custom avatar URL"/></p>
+                <br></br><input onClick={("")} placeholder="Custom avatar URL"/></p>
             </label>
 
             <button type="password">Submit</button>
