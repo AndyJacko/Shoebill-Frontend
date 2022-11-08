@@ -1,12 +1,32 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 import "./UserItem.css";
 
 const UserItem = ({ user }) => {
+  const [userpic, setUserPic] = useState();
+
+  useEffect(() => {
+    const getUserPic = async () => {
+      const response = await fetch(`https://robohash.org/${user.username}`);
+
+      if (response.url) {
+        setUserPic(response.url);
+      }
+    };
+
+    if (user.pic) {
+      setUserPic(user.pic);
+    } else {
+      getUserPic();
+    }
+  }, [user]);
+
   return (
     <div className="user-item-container">
       <div className="user-item-info">
-        <div className="user-item-pic">Pic</div>
+        <div className="user-item-pic">
+          <img src={userpic} alt={user.username} />
+        </div>
 
         <div>
           <div>
@@ -14,7 +34,11 @@ const UserItem = ({ user }) => {
             <span className="user-info-username">@{user.username}</span>
           </div>
 
-          <div>Bio</div>
+          <div>
+            {user.bio
+              ? user.bio
+              : "Lorem ipsum dolor sit amet, consectetur adipiscing elit"}
+          </div>
         </div>
       </div>
 
