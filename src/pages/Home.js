@@ -15,7 +15,6 @@ const HomePage = () => {
         <Login />
         <Register />
         <Update />
-        <Newbill />
       </div>
     </div>
   );
