@@ -1,0 +1,49 @@
+.whotofollow-container {
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 5px;
+  background: #2f3336;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.whotofollow-info {
+  display: flex;
+}
+
+.whotofollow-pic {
+  max-width: 50px;
+  min-width: 50px;
+  max-height: 50px;
+  min-height: 50px;
+  margin-right: 10px;
+  border-radius: 50%;
+  border: 2px solid #999999;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.whotofollow-pic img {
+  width: 100%;
+}
+
+.whotofollow-username {
+  color: #71767b;
+}
+
+.whotofollow-follow {
+  padding: 5px 10px;
+  background: #0d350d;
+  border: 1px solid #999999;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.whotofollow-follow:hover {
+  background: #041104;
+  border: 1px solid #0d350d;
+}
