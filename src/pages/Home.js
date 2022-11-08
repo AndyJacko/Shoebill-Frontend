@@ -21,3 +21,6 @@ const HomePage = () => {
 };
 
 export default HomePage;
+
+const Login = styled.div
+display
