@@ -1,17 +1,33 @@
-import './App.css';
-import Login from "./Components/Login";
-import Register from './Components/Register';
-import Update from './Components/Update';
+import React, { Suspense } from "react";
+import { Navigate, Routes, Route } from "react-router-dom";
 
-function App() {
+import Layout from "./pages/page-layout/Layout";
+import HomePage from "./pages/Home";
+import AllUsersPage from "./pages/AllUsers";
+import Spinner from "./Components/UI/Spinner/Spinner";
+
+const NotFound = React.lazy(() => import("./pages/NotFound"));
+
+const App = () => {
   return (
-    <div className="App">
-                  <Login />
-                  <Register />
-                  <Update />
+    <Layout>
+      <Suspense
+        fallback={
+          <div className="p-5">
+            <Spinner />
+          </div>
+        }>
+        <Routes>
+          <Route path="/notfound" element={<NotFound />} />
 
-    </div>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/users" element={<AllUsersPage />} />
+
+          <Route path="*" element={<Navigate replace to="/notfound" />} />
+        </Routes>
+      </Suspense>
+    </Layout>
   );
-}
+};
 
 export default App;
