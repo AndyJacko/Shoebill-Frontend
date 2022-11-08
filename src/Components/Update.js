@@ -9,27 +9,33 @@ const Update = () => {
     return (
         <form onSubmit = {submitHandler}>
 
+<div id="container2"></div><div class="specialheading3">Update your user details
+
+
 <br></br>
-            Current Avatar:<img src="https://picsum.photos/200" alt="something"></img>
+<br></br>
+            Current Avatar:
+            <br>
+            </br><img src="https://picsum.photos/200" alt="something"></img>
             <br></br>
             <br></br>
-            <label>Username
+            <label><p class="contactform">Username
             <input onClick={("")} placeholder="Username"/>
+            </p>
             </label>
-            <br></br>
 
-            <label>Email
+            <label><p class="contactform">Email
             <input onClick={("")} placeholder="Email address"/>
+            </p>
             </label>
-            <br></br>
 
-            <label>Password
+            <label><p class="contactform">Password
                 <input onClick={("")} placeholder="Custom avatar URL"/>
+                </p>
             </label>
-            <br></br>
 
-            <label>Custom avatar URL:
-                <input onClick={("")} placeholder="Your name"/>
+            <label><p class="contactform">Custom avatar URL:
+                <input onClick={("")} placeholder="Your name"/></p>
             </label>
             <br></br>
 
@@ -37,23 +43,7 @@ const Update = () => {
             <br></br>
             <button type="password">Submit</button>
 
-
-            <p class="contactform">Name
-            <input id="emailinput" type="text" placeholder="Your name" name="text1" />
-        
-        </p>
-        <p class="contactform">Subject
-            <input id="emailinput" type="text" placeholder="Subject" name="text1"  />
-        
-        </p>
-        <p class="contactform">Message
-            <input id="emailinput" type="text" placeholder="Your message" name="text1" />
-        
-        </p>
-
-
-        <button type="password">Submit</button>
-            
+        </div>
         </form>
 
 
