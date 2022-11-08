@@ -13,6 +13,7 @@
 }
 
 .user-item-pic {
+<<<<<<< HEAD
   max-width: 75px;
   min-width: 75px;
   max-height: 75px;
@@ -28,6 +29,9 @@
 
 .user-item-pic img {
   width: 100%;
+=======
+  width: 100px;
+>>>>>>> 813ca10 (.)
 }
 
 .user-info-username {
