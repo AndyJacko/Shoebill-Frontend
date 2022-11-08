@@ -1,0 +1,34 @@
+.user-item-container {
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 5px;
+  background: #2f3336;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.user-item-info {
+  display: flex;
+}
+
+.user-item-pic {
+  width: 100px;
+}
+
+.user-info-username {
+  color: #71767b;
+}
+
+.user-item-follow {
+  padding: 10px 20px;
+  background: #0d350d;
+  border: 1px solid #999999;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.user-item-follow:hover {
+  background: #041104;
+  border: 1px solid #0d350d;
+}
