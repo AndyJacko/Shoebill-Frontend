@@ -1,0 +1,17 @@
+.footer {
+  margin: 10px 0;
+  color: #71767b;
+  font-size: 14px;
+}
+
+.footer div {
+  margin: 10px 0;
+}
+
+.footer span {
+  padding-right: 10px;
+  cursor: pointer;
+}
+.footer span:hover {
+  text-decoration: underline;
+}
