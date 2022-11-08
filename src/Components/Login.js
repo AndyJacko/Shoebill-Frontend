@@ -4,27 +4,27 @@ const Login = () => {
   const submitHandler = () => {};
 
   return (
-    <form onSubmit={submitHandler}>
-      <label>
-        Username:
-        <input onClick={""} />
-      </label>
-      <br></br>
+    <form onSubmit = {submitHandler}>
 
-      <label>
-        Email:
-        <input onClick={""} />
-      </label>
-      <br></br>
+<div id="container2"></div><div class="specialheading3">Shoebill Login
+            <label><p class="contactform">Username
+            <br></br><input onClick={("")} placeholder="Username"/>
+            </p>
+            </label>
 
-      <label>
-        Password:
-        <input onClick={""} />
-      </label>
-      <br></br>
-      <br></br>
-      <button type="password">login</button>
-    </form>
+            
+
+            <label><p class="contactform">Password
+                <br></br><input onClick={("")} placeholder="Password"/>
+                </p>
+            </label>
+
+            
+
+            <button type="password">Login</button>
+
+        </div>
+        </form>
   );
 };
 
