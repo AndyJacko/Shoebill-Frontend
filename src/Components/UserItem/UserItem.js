@@ -25,7 +25,7 @@ const UserItem = ({ user }) => {
     <div className="user-item-container">
       <div className="user-item-info">
         <div className="user-item-pic">
-          <img src={userpic} alt={user.username} />
+          {userpic && <img src={userpic} alt={user.username} />}
         </div>
 
         <div>
