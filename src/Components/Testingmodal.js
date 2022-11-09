@@ -26,7 +26,14 @@ const Newbill = () => {
             <br></br><input onClick={("")} placeholder="Username"/>
             </p>
             
-            
+            <p class="contactform">Email
+            <br></br><input onClick={("")} placeholder="Email address"/>
+            </p>
+
+            <p class="contactform">Password
+                <br></br><input onClick={("")} placeholder="Password"/>
+                </p>
+
             </div>
         <button onClick={toggleModal}>Register</button>
       </Modal>
