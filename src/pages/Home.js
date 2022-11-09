@@ -5,6 +5,8 @@ import Register from "../Components/Register";
 import Update from "../Components/Update";
 import Newbill from "../Components/Newbill";
 import Testingmodal from "../Components/Testingmodal";
+// import Testingmodaltwo from "../Components/Testingmodaltwo";
+
 
 const HomePage = () => {
   useEffect(() => window.scrollTo(0, 0), []);
