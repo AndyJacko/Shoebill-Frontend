@@ -202,12 +202,9 @@ body.active-modal {
 
 
 .specialheading3 {
-
-background: #373B44;  /* fallback for old browsers */
-background: -webkit-linear-gradient(to bottom, #4286f4, #373B44);  /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to bottom, #4286f4, #373B44); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
-
+  background: #373B44;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to bottom, #4286f4, #373B44);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to bottom, #4286f4, #373B44); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   flex: auto;
   font-size: 1rem;
   color: white;
@@ -216,7 +213,6 @@ background: linear-gradient(to bottom, #4286f4, #373B44); /* W3C, IE 10+/ Edge, 
   /* max-width: 50%; */
   margin: 4rem auto;
   padding: 1rem 3rem 1rem 3rem;
-
   /* background: hsl(260 89% 31% / 50%);
   backdrop-filter: blur(2rem); */
   border-radius: 0.5rem;
