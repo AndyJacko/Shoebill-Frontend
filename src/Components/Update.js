@@ -1,49 +1,55 @@
-import React from "react";
+import React, { useState } from "react";
+import Modal from "react-modal";
 
 const Update = () => {
+  const [isOpen, setIsOpen] = useState(false);
 
-    const submitHandler = () => {
-    
-    }
+  function toggleModal() {
+    setIsOpen(!isOpen);
+  }
 
-    return (
-        <form onSubmit = {submitHandler}>
+  return (
+    <div className="specialheading3">
+      <button onClick={toggleModal}>Edit Profile</button>
 
-<div id="container2"></div><div class="specialheading3">Update your account details
+      <Modal
+        isOpen={isOpen}
+        onRequestClose={toggleModal}
+        contentLabel=""
+      >
 
+<div className="specialheading3">
+          
+        <p class="contactform">Update your account details</p>
 
-<br></br>
-<br></br>
-            Current Avatar:
-            <br>
-            </br><img src="https://picsum.photos/200" alt="something"></img>
-            <label><p class="contactform">Username
+        <p class="contactform">Current avatar:<br></br>
+        <img src="https://picsum.photos/200" alt="something" /></p>
+
+          <p class="contactform">Username
             <br></br><input onClick={("")} placeholder="Username"/>
             </p>
-            </label>
+            
+            
 
-            <label><p class="contactform">Email
-            <br></br><input onClick={("")} placeholder="Email address"/>
-            </p>
-            </label>
+            <p class="contactform">Email
+                <br></br><input onClick={("")} placeholder="Email"/>
+                </p>
 
-            <label><p class="contactform">Password
+                <p class="contactform">Password
                 <br></br><input onClick={("")} placeholder="Password"/>
                 </p>
-            </label>
 
-            <label><p class="contactform">Custom avatar URL
-                <br></br><input onClick={("")} placeholder="Custom avatar URL"/></p>
-            </label>
+                <p class="contactform">Custom avatar URL
+                <br></br><input onClick={("")} placeholder="Custom avatar URL"/>
+                </p>
+            
+            
+                <button onClick={toggleModal}>Submit</button>
 
-            <button type="password">Submit</button>
+            </div>
+      </Modal>
+    </div>
+  );
+};
 
-        </div>
-        </form>
-
-
-
-    )
-}
-
-export default Update
+export default Update;
