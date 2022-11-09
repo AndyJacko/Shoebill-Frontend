@@ -25,7 +25,7 @@ const App = () => {
           <Route path="/users" element={<AllUsersPage />} />
           <Route path="/messages" element={<MessagesPage />} />
           <Route path="/notifications" element={<NotificationsPage />} />
-          <Route path="/profile/:id" element={<ProfilePage />} />
+          <Route path="/users/:id" element={<ProfilePage />} />
           <Route path="/notfound" element={<NotFound />} />
 
           <Route path="*" element={<Navigate replace to="/notfound" />} />
