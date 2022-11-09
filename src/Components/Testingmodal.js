@@ -1,10 +1,7 @@
 import React, { useState } from "react";
-
 import Modal from "react-modal";
 
 const Newbill = () => {
-  
-
   const [isOpen, setIsOpen] = useState(false);
 
   function toggleModal() {
@@ -22,11 +19,9 @@ const Newbill = () => {
       >
 
 <div id="container2"></div><div class="specialheading3">Shoebill Signup</div>
-
-
         <div className="specialheading3">
           
-        <p class="contactform">Username</p>
+        <p class="contactform"></p>
           <p class="contactform">Username
             <br></br><input onClick={("")} placeholder="Username"/>
             </p>
@@ -44,23 +39,6 @@ const Newbill = () => {
       </Modal>
     </div>
   );
-
-  
-  
-//   const submitHandler = () => {};
-
-//   return (
-//     <form onSubmit = {submitHandler}>
-
-// <div id="container2"></div><div class="specialheading3">Open modal
-            
-//             <button type="password">Open modal</button>
-
-//         </div>
-//         </form>
-//   );
-
-
 };
 
 export default Newbill;

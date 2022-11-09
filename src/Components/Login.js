@@ -1,30 +1,43 @@
-import React from "react";
+import React, { useState } from "react";
+import Modal from "react-modal";
 
 const Login = () => {
-  const submitHandler = () => {};
+  const [isOpen, setIsOpen] = useState(false);
+
+  function toggleModal() {
+    setIsOpen(!isOpen);
+  }
 
   return (
-    <form onSubmit = {submitHandler}>
+    <div className="specialheading3">
+      <button onClick={toggleModal}>Login</button>
 
-<div id="container2"></div><div class="specialheading3">Shoebill Login
-            <label><p class="contactform">Username
+      <Modal
+        isOpen={isOpen}
+        onRequestClose={toggleModal}
+        contentLabel=""
+      >
+
+<div className="specialheading3">
+          
+        <p class="contactform">Shoebill Login</p>
+          <p class="contactform">Username
             <br></br><input onClick={("")} placeholder="Username"/>
             </p>
-            </label>
-
+            
             
 
-            <label><p class="contactform">Password
+            <p class="contactform">Password
                 <br></br><input onClick={("")} placeholder="Password"/>
                 </p>
-            </label>
 
             
+            
+                <button onClick={toggleModal}>Register</button>
 
-            <button type="password">Login</button>
-
-        </div>
-        </form>
+            </div>
+      </Modal>
+    </div>
   );
 };
 
