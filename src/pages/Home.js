@@ -2,6 +2,8 @@ import React, { useEffect } from "react";
 
 import Login from "../Components/Login";
 import Register from "../Components/Register";
+import Update from "../Components/Update";
+import Newbill from "../Components/Newbill";
 
 const HomePage = () => {
   useEffect(() => window.scrollTo(0, 0), []);
@@ -12,6 +14,8 @@ const HomePage = () => {
       <div>
         <Login />
         <Register />
+        <Update />
+        <Newbill />
       </div>
     </div>
   );

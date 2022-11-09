@@ -1,12 +1,16 @@
-@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap");
+/* @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap"); */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 
+* {
+  font-family: 'Montserrat', sans-serif;  
+}
 .App {
   width: 100vw;
   height: 100vh;
   display: flex;
   align-items: center;
   flex-direction: column;
-  font-family: "Nunito", sans-serif;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .App .openModalBtn {
@@ -19,14 +23,23 @@
   cursor: pointer;
 }
 body {
+  font-family: 'Montserrat', sans-serif;
+  color: white;
   padding: 0;
   margin: 0;
+  background-color: #818589;
+  background-size:cover;
+  background-repeat: no-repeat;
+  background-attachment:fixed;
+  background-position: center;
 }
 
 .container {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  /* background-image: linear-gradient(to bottom right, #3a343a, #241f24); */
+
 }
 
 .catpics {
@@ -80,7 +93,7 @@ button {
   letter-spacing: 2.5px;
   font-weight: 500;
   color: white;
-  background-color: #8d7b6f;
+  background-color: #0096FF;
   border: none;
   border-radius: 45px;
   box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
@@ -101,7 +114,7 @@ button:active {
 }
 
 nav {
-  background: #8d7b6f;
+  background: #0096FF;
   width: 100%;
   display: block;
   text-decoration: none;
@@ -185,4 +198,42 @@ body.active-modal {
 
 .buttontwo:active {
   transform: translateY(-1px);
+}
+
+
+.specialheading3 {
+
+background: #373B44;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to bottom, #4286f4, #373B44);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to bottom, #4286f4, #373B44); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+
+  flex: auto;
+  font-size: 1rem;
+  color: white;
+  max-width: 75rem;
+  /* width: 75%; */
+  /* max-width: 50%; */
+  margin: 4rem auto;
+  padding: 1rem 3rem 1rem 3rem;
+
+  /* background: hsl(260 89% 31% / 50%);
+  backdrop-filter: blur(2rem); */
+  border-radius: 0.5rem;
+  border-style: solid;
+  border-width: 0.15rem;
+}
+
+#container2 {
+  display: flex;
+  justify-content: center;
+  /* background-color: DodgerBlue; */
+  background-image: linear-gradient(to bottom right, #3a343a, #241f24);
+}
+
+#container2 > div {
+  margin: 13px;
+  padding: 13px;
+  justify-content: center;
+  background-image: linear-gradient(to bottom right, #3a343a, #241f24);
 }
