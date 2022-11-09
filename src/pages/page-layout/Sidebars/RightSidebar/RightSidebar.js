@@ -12,13 +12,13 @@ const RightSidebar = () => {
   useEffect(() => {
     const getUsers = async () => {
       const response = await fetch(
-        `https://jsonplaceholder.typicode.com/users`
+        `https://cnmaster-shoebill.herokuapp.com/readUser/5`
       );
       const data = await response.json();
 
-      if (data[0].id) {
+      if (data.users[0]._id) {
         setIsLoading(false);
-        setUsers(data);
+        setUsers(data.users);
       }
     };
 
@@ -29,11 +29,11 @@ const RightSidebar = () => {
     <div>
       {isLoading && <Spinner />}
 
-      {!isLoading && users[0].id && (
+      {!isLoading && users[0]._id && (
         <>
           <h2>Who To Follow</h2>
           {users.map((user) => (
-            <WhoToFollow key={user.id} user={user} />
+            <WhoToFollow key={user._id} user={user} />
           ))}
         </>
       )}
