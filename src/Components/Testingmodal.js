@@ -18,10 +18,15 @@ const Newbill = () => {
       <Modal
         isOpen={isOpen}
         onRequestClose={toggleModal}
-        contentLabel="Register"
+        contentLabel=""
       >
+
+<div id="container2"></div><div class="specialheading3">Shoebill Signup</div>
+
+
         <div className="specialheading3">
           
+        <p class="contactform">Username</p>
           <p class="contactform">Username
             <br></br><input onClick={("")} placeholder="Username"/>
             </p>

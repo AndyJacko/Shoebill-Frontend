@@ -1,23 +1,24 @@
-.user-item-container {
+.whotofollow-container {
   margin: 10px 0;
   padding: 10px;
   border-radius: 5px;
   background: #2f3336;
+  font-size: 14px;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-.user-item-info {
+.whotofollow-info {
   display: flex;
 }
 
-.user-item-pic {
-  max-width: 75px;
-  min-width: 75px;
-  max-height: 75px;
-  min-height: 75px;
-  margin-right: 20px;
+.whotofollow-pic {
+  max-width: 50px;
+  min-width: 50px;
+  max-height: 50px;
+  min-height: 50px;
+  margin-right: 10px;
   border-radius: 50%;
   border: 2px solid #999999;
   overflow: hidden;
@@ -26,23 +27,23 @@
   justify-content: center;
 }
 
-.user-item-pic img {
+.whotofollow-pic img {
   width: 100%;
 }
 
-.user-info-username {
+.whotofollow-username {
   color: #71767b;
 }
 
-.user-item-follow {
-  padding: 10px 20px;
+.whotofollow-follow {
+  padding: 5px 10px;
   background: #0d350d;
   border: 1px solid #999999;
-  border-radius: 10px;
+  border-radius: 5px;
   cursor: pointer;
 }
 
-.user-item-follow:hover {
+.whotofollow-follow:hover {
   background: #041104;
   border: 1px solid #0d350d;
 }

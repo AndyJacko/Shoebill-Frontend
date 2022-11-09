@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-import "./UserItem.css";
+import "./WhoToFollow.css";
 
 const UserItem = ({ user }) => {
   const [userpic, setUserPic] = useState();
@@ -22,27 +22,21 @@ const UserItem = ({ user }) => {
   }, [user]);
 
   return (
-    <div className="user-item-container">
-      <div className="user-item-info">
-        <div className="user-item-pic">
+    <div className="whotofollow-container">
+      <div className="whotofollow-info">
+        <div className="whotofollow-pic">
           {userpic && <img src={userpic} alt={user.username} />}
         </div>
 
         <div>
+          <div>{user.username}</div>
           <div>
-            {user.username}&nbsp;
-            <span className="user-info-username">@{user.username}</span>
-          </div>
-
-          <div>
-            {user.bio
-              ? user.bio
-              : "Lorem ipsum dolor sit amet, consectetur adipiscing elit"}
+            <span className="whotofollow-username">@{user.username}</span>
           </div>
         </div>
       </div>
 
-      <div className="user-item-follow">Follow</div>
+      <div className="whotofollow-follow">Follow</div>
     </div>
   );
 };
