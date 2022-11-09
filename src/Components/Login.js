@@ -33,7 +33,7 @@ const Login = () => {
 
             
             
-                <button onClick={toggleModal}>Register</button>
+                <button onClick={toggleModal}>Login</button>
 
             </div>
       </Modal>
