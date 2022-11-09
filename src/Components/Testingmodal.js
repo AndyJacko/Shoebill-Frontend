@@ -12,16 +12,23 @@ const Newbill = () => {
   }
 
   return (
-    <div className="App">
-      <button onClick={toggleModal}>Open modal</button>
+    <div className="specialheading3">
+      <button onClick={toggleModal}>Register</button>
 
       <Modal
         isOpen={isOpen}
         onRequestClose={toggleModal}
         contentLabel="My dialog"
       >
-        <div>My modal dialog.</div>
-        <button onClick={toggleModal}>Close modal</button>
+        <div className="specialheading3">
+          
+          <p class="contactform">Username
+            <br></br><input onClick={("")} placeholder="Username"/>
+            </p>
+            
+            
+            </div>
+        <button onClick={toggleModal}>Register</button>
       </Modal>
     </div>
   );
