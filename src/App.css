@@ -200,6 +200,7 @@ body.active-modal {
   transform: translateY(-1px);
 }
 
+
 .specialheading3 {
 
 background: #373B44;  /* fallback for old browsers */
@@ -215,6 +216,7 @@ background: linear-gradient(to bottom, #4286f4, #373B44); /* W3C, IE 10+/ Edge, 
   /* max-width: 50%; */
   margin: 4rem auto;
   padding: 1rem 3rem 1rem 3rem;
+
   /* background: hsl(260 89% 31% / 50%);
   backdrop-filter: blur(2rem); */
   border-radius: 0.5rem;
@@ -227,7 +229,6 @@ background: linear-gradient(to bottom, #4286f4, #373B44); /* W3C, IE 10+/ Edge, 
   justify-content: center;
   /* background-color: DodgerBlue; */
   background-image: linear-gradient(to bottom right, #3a343a, #241f24);
-
 }
 
 #container2 > div {
@@ -235,5 +236,4 @@ background: linear-gradient(to bottom, #4286f4, #373B44); /* W3C, IE 10+/ Edge, 
   padding: 13px;
   justify-content: center;
   background-image: linear-gradient(to bottom right, #3a343a, #241f24);
-
 }
