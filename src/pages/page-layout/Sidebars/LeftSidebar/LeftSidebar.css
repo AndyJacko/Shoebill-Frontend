@@ -28,17 +28,4 @@
   font-size: 18px;
 }
 
-.lsb-bark-button {
-  margin-top: 20px;
-  padding: 10px;
-  background: #0e183b;
-  border-radius: 10px;
-  border: 1px solid #2a4bb4;
-  text-align: center;
-  cursor: pointer;
-}
 
-.lsb-bark-button:hover {
-  background: #2a4bb4;
-  border: 1px solid #0e183b;
-}
