@@ -1,35 +1,48 @@
-import React from "react";
+import React, { useState } from "react";
+import Modal from "react-modal";
 
 const Register = () => {
-  const submitHandler = () => {};
+  const [isOpen, setIsOpen] = useState(false);
+
+  function toggleModal() {
+    setIsOpen(!isOpen);
+  }
 
   return (
-    <form onSubmit = {submitHandler}>
+    <div className="">
+      <button onClick={toggleModal}>Register</button>
 
-<div id="container2"></div><div class="specialheading3">Shoebill Signup
-            <label><p class="contactform">Username
+      <Modal
+        isOpen={isOpen}
+        onRequestClose={toggleModal}
+        contentLabel=""
+      >
+
+
+        <div className="specialheading3">
+          
+        <p class="contactform">Shoebill Signup</p>
+          <p class="contactform">Username
             <br></br><input onClick={("")} placeholder="Username"/>
             </p>
-            </label>
-
-            <label><p class="contactform">Email
+            
+            <p class="contactform">Email
             <br></br><input onClick={("")} placeholder="Email address"/>
             </p>
-            </label>
 
-            <label><p class="contactform">Password
+            <p class="contactform">Password
                 <br></br><input onClick={("")} placeholder="Password"/>
                 </p>
-            </label>
 
-            <label><p class="contactform">Custom avatar URL - optional
+            <p class="contactform">Custom avatar URL
                 <br></br><input onClick={("")} placeholder="Custom avatar URL"/></p>
-            </label>
+            
+                <button onClick={toggleModal}>Register</button>
 
-            <button type="password">Register</button>
-
-        </div>
-        </form>
+            </div>
+        
+      </Modal>
+    </div>
   );
 };
 

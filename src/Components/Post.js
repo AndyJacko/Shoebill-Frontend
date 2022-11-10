@@ -10,7 +10,7 @@ const Login = () => {
 
   return (
     <div className="">
-      <button onClick={toggleModal}>Login</button>
+      <button onClick={toggleModal}>Bark</button>
 
       <Modal
         isOpen={isOpen}
@@ -20,20 +20,18 @@ const Login = () => {
 
 <div className="specialheading3">
           
-        <p class="contactform">Shoebill Login</p>
-          <p class="contactform">Username
-            <br></br><input onClick={("")} placeholder="Username"/>
+        <p class="contactform">Compose bark</p>
+          <p class="contactform">Your post
+            <br></br><input onClick={("")} placeholder="What's new, Shoebill?"/>
             </p>
             
             
 
-            <p class="contactform">Password
-                <br></br><input onClick={("")} placeholder="Password"/>
-                </p>
+            
+            
+            
+                <button onClick={toggleModal}>Bark</button>
 
-            
-            
-                <button onClick={toggleModal}>Login</button>
             </div>
       </Modal>
     </div>

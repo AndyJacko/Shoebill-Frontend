@@ -2,24 +2,19 @@ import React, { useEffect } from "react";
 import Login from "../Components/Login";
 import Register from "../Components/Register";
 import Update from "../Components/Update";
-import Newbill from "../Components/Newbill";
-import Testingmodal from "../Components/Testingmodal";
-
-// import Testingmodaltwo from "../Components/Testingmodaltwo";
+import Post from "../Components/Post";
 
 const HomePage = () => {
   useEffect(() => window.scrollTo(0, 0), []);
 
   return (
     <div>
-      <div>Home Page</div>
+      <div>Home Page</div><br></br>
       <div>
-      <Testingmodal />
-
-        <Login />
-        <Register />
-        <Update />
-        <Newbill />
+        <Login /><br></br>
+        <Register /><br></br>
+        <Update /><br></br>
+        <Post /><br></br>
 
       </div>
     </div>
