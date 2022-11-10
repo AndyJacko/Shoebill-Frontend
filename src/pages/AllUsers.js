@@ -10,13 +10,13 @@ const AllUsers = () => {
   useEffect(() => {
     const getUsers = async () => {
       const response = await fetch(
-        `https://jsonplaceholder.typicode.com/users`
+        `https://cnmaster-shoebill.herokuapp.com/readUser`
       );
       const data = await response.json();
 
-      if (data[0].id) {
+      if (data.user[0]._id) {
         setIsLoading(false);
-        setUsers(data);
+        setUsers(data.user);
       }
     };
 
@@ -27,11 +27,11 @@ const AllUsers = () => {
     <>
       {isLoading && <Spinner />}
 
-      {!isLoading && users[0].id && (
+      {!isLoading && users[0]._id && (
         <>
           <h2>All Users</h2>
           {users.map((user) => (
-            <UserItem key={user.id} user={user} />
+            <UserItem key={user._id} user={user} />
           ))}
         </>
       )}
