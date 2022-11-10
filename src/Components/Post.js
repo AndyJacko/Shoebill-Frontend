@@ -1,17 +1,6 @@
 import React, { useState } from "react";
 import Modal from "react-modal";
 
-// const customStyles = {
-//   content: {
-//     top: '50%',
-//     left: '50%',
-//     right: 'auto',
-//     bottom: 'auto',
-//     marginRight: '-50%',
-//     transform: 'translate(-50%, -50%)',
-//   },
-// };
-
 const Login = () => {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -23,12 +12,8 @@ const Login = () => {
     <div className="">
       <button onClick={toggleModal}>Bark</button>
 
-      <Modal
-        isOpen={isOpen}
-        onRequestClose={toggleModal}
-        contentLabel=""
-
-        style={{
+      <Modal isOpen={isOpen} onRequestClose={toggleModal} contentLabel=""
+         style={{
           overlay: {
             position: 'fixed',
             top: 0,
@@ -51,24 +36,18 @@ const Login = () => {
             outline: 'none',
             padding: '0px',
           }
-        }}
-      >
+        }}>
 
-<div className="specialheading3">
-          
-        <p class="contactform">Compose bark</p>
-          <p class="contactform">Your post
-            <br></br><input onClick={("")} placeholder="What's new, Shoebill?"/>
-            </p>
-            
-            
+        <div className="specialheading3">
+          <p class="contactform">Compose bark</p>
+          <p class="contactform">
+            Your post
+            <br></br>
+            <input onClick={""} placeholder="What's new, Shoebill?" />
+          </p>
 
-            
-            
-            
-                <button onClick={toggleModal}>Bark</button>
-
-            </div>
+          <button onClick={toggleModal}>Bark</button>
+        </div>
       </Modal>
     </div>
   );

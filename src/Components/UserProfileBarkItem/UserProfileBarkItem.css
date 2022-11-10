@@ -1,0 +1,29 @@
+.bark-item-container {
+  padding: 10px 0;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #ffffff;
+}
+
+.bark-item-date {
+  font-size: 12px;
+}
+
+.bark-item-comment {
+  margin: 10px 0;
+}
+
+.bark-item-crl-container,
+.bark-item-crl {
+  display: flex;
+}
+
+.bark-item-crl {
+  margin-right: 20px;
+}
+
+.bark-item-icon {
+  height: 20px;
+  width: 20px;
+  margin-right: 5px;
+  fill: #ffffff;
+}
