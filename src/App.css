@@ -90,8 +90,8 @@ background: linear-gradient(to bottom, #4286f4, #373B44); /* W3C, IE 10+/ Edge, 
 }
 
 button {
-  padding: 1.3em 3em;
-  font-size: 12px;
+  padding: 0.6em 3em;
+  font-size: 18px;
   text-transform: uppercase;
   letter-spacing: 2.5px;
   font-weight: 500;

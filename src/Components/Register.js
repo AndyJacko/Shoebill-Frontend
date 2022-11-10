@@ -10,7 +10,9 @@ const Register = () => {
 
   return (
     <div className="">
-      <button onClick={toggleModal}>Register</button>
+      <button onClick={toggleModal}>
+  <i class="fas fa-thumbs-up"></i> Register
+</button>
 
       <Modal
         isOpen={isOpen}

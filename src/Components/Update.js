@@ -10,7 +10,9 @@ const Update = () => {
 
   return (
     <div className="">
-      <button onClick={toggleModal}>Edit Profile</button>
+      <button onClick={toggleModal}>
+  <i class="fas fa-thumbs-up"></i> Edit Profile
+</button>
 
       <Modal
         isOpen={isOpen}

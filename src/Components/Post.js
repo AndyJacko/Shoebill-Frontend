@@ -10,7 +10,9 @@ const Login = () => {
 
   return (
     <div className="">
-      <button onClick={toggleModal}>Bark</button>
+      <button onClick={toggleModal}>
+  <i class="fas fa-thumbs-up"></i> Bark
+</button>
 
       <Modal isOpen={isOpen} onRequestClose={toggleModal} contentLabel=""
          style={{
