@@ -1,6 +1,6 @@
 import React from "react";
 
-const Newbill = () => {
+const Post = () => {
   const submitHandler = () => {};
 
   return (
@@ -18,4 +18,4 @@ const Newbill = () => {
   );
 };
 
-export default Newbill;
+export default Post;

@@ -1,30 +1,65 @@
-import React from "react";
+import React, { useState } from "react";
+import Modal from "react-modal";
 
 const Login = () => {
-  const submitHandler = () => {};
+  const [isOpen, setIsOpen] = useState(false);
+
+  function toggleModal() {
+    setIsOpen(!isOpen);
+  }
 
   return (
-    <form onSubmit = {submitHandler}>
+    <div className="">
+      <button onClick={toggleModal}>Login</button>
 
-<div id="container2"></div><div class="specialheading3">Shoebill Login
-            <label><p class="contactform">Username
+      <Modal
+        isOpen={isOpen}
+        onRequestClose={toggleModal}
+        contentLabel=""
+        style={{
+          overlay: {
+            position: 'fixed',
+            top: 0,
+            left: 0,
+            right: 0,
+            bottom: 0,
+            backgroundColor: 'rgba(255, 255, 255, 0.0)'
+          },
+          content: {
+            position: 'absolute',
+            top: '200px',
+            left: '400px',
+            right: '400px',
+            bottom: '0px',
+            border: '0px solid #ccc',
+            background: 'rgba(255, 255, 255, 0.0)',
+            overflow: 'auto',
+            WebkitOverflowScrolling: 'touch',
+            borderRadius: '0px',
+            outline: 'none',
+            padding: '0px',
+          }
+        }}>
+
+<div className="specialheading3">
+          
+        <p class="contactform">Shoebill Login</p>
+          <p class="contactform">Username
             <br></br><input onClick={("")} placeholder="Username"/>
             </p>
-            </label>
-
+            
             
 
-            <label><p class="contactform">Password
+            <p class="contactform">Password
                 <br></br><input onClick={("")} placeholder="Password"/>
                 </p>
-            </label>
 
             
-
-            <button type="password">Login</button>
-
-        </div>
-        </form>
+            
+                <button onClick={toggleModal}>Login</button>
+            </div>
+      </Modal>
+    </div>
   );
 };
 

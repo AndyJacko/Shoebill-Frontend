@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Modal from "react-modal";
 
-const Register = () => {
+const Login = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   function toggleModal() {
@@ -10,13 +10,10 @@ const Register = () => {
 
   return (
     <div className="">
-      <button onClick={toggleModal}>Register</button>
+      <button onClick={toggleModal}>Bark</button>
 
-      <Modal
-        isOpen={isOpen}
-        onRequestClose={toggleModal}
-        contentLabel=""
-        style={{
+      <Modal isOpen={isOpen} onRequestClose={toggleModal} contentLabel=""
+         style={{
           overlay: {
             position: 'fixed',
             top: 0,
@@ -41,32 +38,19 @@ const Register = () => {
           }
         }}>
 
-
         <div className="specialheading3">
-          
-        <p class="contactform">Shoebill Signup</p>
-          <p class="contactform">Username
-            <br></br><input onClick={("")} placeholder="Username"/>
-            </p>
-            
-            <p class="contactform">Email
-            <br></br><input onClick={("")} placeholder="Email address"/>
-            </p>
+          <p class="contactform">Compose bark</p>
+          <p class="contactform">
+            Your post
+            <br></br>
+            <input onClick={""} placeholder="What's new, Shoebill?" />
+          </p>
 
-            <p class="contactform">Password
-                <br></br><input onClick={("")} placeholder="Password"/>
-                </p>
-
-            <p class="contactform">Custom avatar URL
-                <br></br><input onClick={("")} placeholder="Custom avatar URL"/></p>
-            
-                <button onClick={toggleModal}>Register</button>
-
-            </div>
-        
+          <button onClick={toggleModal}>Bark</button>
+        </div>
       </Modal>
     </div>
   );
 };
 
-export default Register;
+export default Login;

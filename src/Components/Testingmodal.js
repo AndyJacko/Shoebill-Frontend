@@ -2,8 +2,6 @@ import React, { useState } from "react";
 import Modal from "react-modal";
 
 const Newbill = () => {
-  
-
   const [isOpen, setIsOpen] = useState(false);
 
   function toggleModal() {
@@ -18,48 +16,49 @@ const Newbill = () => {
         isOpen={isOpen}
         onRequestClose={toggleModal}
         contentLabel=""
-      >
+        style={{
+          overlay: {
+            position: 'fixed',
+            top: 0,
+            left: 0,
+            right: 0,
+            bottom: 0,
+            backgroundColor: 'rgba(255, 255, 255, 0.0)'
+          },
+          content: {
+            position: 'absolute',
+            top: '200px',
+            left: '400px',
+            right: '400px',
+            bottom: '0px',
+            border: '0px solid #ccc',
+            background: 'rgba(255, 255, 255, 0.0)',
+            overflow: 'auto',
+            WebkitOverflowScrolling: 'touch',
+            borderRadius: '0px',
+            outline: 'none',
+            padding: '0px',
+          }
+        }}>
 
-<div id="container2"></div><div class="specialheading3">Shoebill Signup</div>
-
-
-        <div className="specialheading3">
-          
-        <p class="contactform">Username</p>
+        <div id="container2"></div><div class="specialheading3">Shoebill Signup
+          <p class="contactform"></p>
           <p class="contactform">Username
-            <br></br><input onClick={("")} placeholder="Username"/>
-            </p>
-            
-            <p class="contactform">Email
-            <br></br><input onClick={("")} placeholder="Email address"/>
-            </p>
+            <br></br><input onClick={("")} placeholder="Username" />
+          </p>
 
-            <p class="contactform">Password
-                <br></br><input onClick={("")} placeholder="Password"/>
-                </p>
+          <p class="contactform">Email
+            <br></br><input onClick={("")} placeholder="Email address" />
+          </p>
 
-            </div>
-        <button onClick={toggleModal}>Register</button>
+          <p class="contactform">Password
+            <br></br><input onClick={("")} placeholder="Password" />
+          </p>
+          <button onClick={toggleModal}>Register</button>
+        </div>
       </Modal>
     </div>
   );
-
-  
-  
-//   const submitHandler = () => {};
-
-//   return (
-//     <form onSubmit = {submitHandler}>
-
-// <div id="container2"></div><div class="specialheading3">Open modal
-            
-//             <button type="password">Open modal</button>
-
-//         </div>
-//         </form>
-//   );
-
-
 };
 
 export default Newbill;
