@@ -7,6 +7,7 @@
   width: 20px;
   margin-right: 20px;
   fill: #ffffff;
+  display:flex
 }
 
 .lsb-link {
@@ -25,6 +26,7 @@
   cursor: pointer;
   outline: none;
   text-decoration: none;
+  display:flex
 }
 
 .lsb-link:hover {
@@ -33,6 +35,7 @@
   color: #fff;
   transform: translateY(-7px);
   text-decoration: none;
+  display:flex
 }
 
 
@@ -43,7 +46,9 @@
   color: #ffffff;
   text-decoration: none;
   font-size: 18px;
+  display:flex
 }
 .lsb-link a:active {
   transform: translateY(-1px);
+  display:flex
 }
