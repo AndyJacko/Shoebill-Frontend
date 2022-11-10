@@ -9,7 +9,7 @@ const Update = () => {
   }
 
   return (
-    <div className="specialheading3">
+    <div className="">
       <button onClick={toggleModal}>Edit Profile</button>
 
       <Modal

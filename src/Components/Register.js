@@ -9,7 +9,7 @@ const Register = () => {
   }
 
   return (
-    <div className="specialheading3">
+    <div className="">
       <button onClick={toggleModal}>Register</button>
 
       <Modal
