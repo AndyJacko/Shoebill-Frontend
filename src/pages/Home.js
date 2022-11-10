@@ -9,12 +9,12 @@ const HomePage = () => {
 
   return (
     <div>
-      <div>Home Page</div>
+      <div>Home Page</div><br></br>
       <div>
-        <Login />
-        <Register />
-        <Update />
-        <Post />
+        <Login /><br></br>
+        <Register /><br></br>
+        <Update /><br></br>
+        <Post /><br></br>
 
       </div>
     </div>

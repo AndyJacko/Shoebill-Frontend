@@ -34,7 +34,6 @@ const Login = () => {
             
             
                 <button onClick={toggleModal}>Login</button>
-
             </div>
       </Modal>
     </div>
