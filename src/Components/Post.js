@@ -13,28 +13,28 @@ const Login = () => {
       <button onClick={toggleModal}>Bark</button>
 
       <Modal isOpen={isOpen} onRequestClose={toggleModal} contentLabel=""
-        style={{
+         style={{
           overlay: {
             position: 'fixed',
             top: 0,
             left: 0,
             right: 0,
             bottom: 0,
-            backgroundColor: 'rgba(255, 255, 255, 0.1)'
+            backgroundColor: 'rgba(255, 255, 255, 0.0)'
           },
           content: {
             position: 'absolute',
-            top: '40px',
-            left: '40px',
-            right: '40px',
-            bottom: '40px',
+            top: '200px',
+            left: '400px',
+            right: '400px',
+            bottom: '0px',
             border: '0px solid #ccc',
-            background: 'rgba(255, 255, 255, 0.1)',
+            background: 'rgba(255, 255, 255, 0.0)',
             overflow: 'auto',
             WebkitOverflowScrolling: 'touch',
             borderRadius: '0px',
             outline: 'none',
-            padding: '0px'
+            padding: '0px',
           }
         }}>
 
