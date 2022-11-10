@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Modal from "react-modal";
 
+
 const Login = () => {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -10,6 +11,7 @@ const Login = () => {
 
   return (
     <div className="">
+
       <button onClick={toggleModal}>Login</button>
 
       <Modal
