@@ -38,16 +38,14 @@
   display:flex
 }
 
-
-
 .lsb-link a,
-
 .lsb-link a:visited {
   color: #ffffff;
   text-decoration: none;
   font-size: 18px;
   display:flex
 }
+
 .lsb-link a:active {
   transform: translateY(-1px);
   display:flex

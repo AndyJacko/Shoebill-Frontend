@@ -37,7 +37,7 @@ const Profile = () => {
         <>
           <UserProfileInfo user={user} />
 
-          {user.posts[0]._id && (
+          {user.posts && (
             <div>
               <h2>Barks</h2>
 
