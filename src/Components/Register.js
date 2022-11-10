@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Modal from "react-modal";
 
+
 const Register = () => {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -44,20 +45,20 @@ const Register = () => {
 
         <div className="specialheading3">
           
-        <p class="contactform">Shoebill Signup</p>
-          <p class="contactform">Username
+        <p className="contactform">Shoebill Signup</p>
+          <p className="contactform">Username
             <br></br><input onClick={("")} placeholder="Username"/>
             </p>
             
-            <p class="contactform">Email
+            <p className="contactform">Email
             <br></br><input onClick={("")} placeholder="Email address"/>
             </p>
 
-            <p class="contactform">Password
+            <p className="contactform">Password
                 <br></br><input onClick={("")} placeholder="Password"/>
                 </p>
 
-            <p class="contactform">Custom avatar URL
+            <p className="contactform">Custom avatar URL
                 <br></br><input onClick={("")} placeholder="Custom avatar URL"/></p>
             
                 <button onClick={toggleModal}>Register</button>
