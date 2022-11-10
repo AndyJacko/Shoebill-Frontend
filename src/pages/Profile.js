@@ -4,8 +4,6 @@ import { useParams } from "react-router-dom";
 import UserProfileInfo from "../Components/UserProfileInfo/UserProfileInfo";
 import Spinner from "../Components/UI/Spinner/Spinner";
 
-import "./Profile.css";
-
 const Profile = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [user, setUser] = useState([]);

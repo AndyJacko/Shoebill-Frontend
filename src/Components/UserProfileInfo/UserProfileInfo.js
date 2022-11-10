@@ -23,7 +23,9 @@ const UserProfileInfo = ({ user }) => {
 
   return (
     <div className="user-profile-container">
-      <div>{userpic && <img src={userpic} alt={user.username} />}</div>
+      <div className="user-profile-userpic">
+        {userpic && <img src={userpic} alt={user.username} />}
+      </div>
 
       {user.realname && (
         <div className="user-profile-realname">{user.realname}</div>

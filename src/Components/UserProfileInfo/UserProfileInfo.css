@@ -2,6 +2,20 @@
   font-size: 14px;
 }
 
+.user-profile-userpic {
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.user-profile-userpic img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 2px solid white;
+}
+
 .user-profile-realname {
   font-size: 16px;
   font-weight: bold;
