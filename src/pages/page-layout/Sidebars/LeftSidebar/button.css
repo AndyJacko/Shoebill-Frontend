@@ -1,23 +1,10 @@
-.lsb-logo {
-  margin-bottom: 30px;
-}
-
-.lsb-icon {
-  height: 20px;
-  width: 20px;
-  margin-right: 20px;
-  fill: #ffffff;
-  display:flex
-}
-
-.lsb-link {
-  margin-bottom: 20px;
+button {
   padding: 1.3em 3em;
   font-size: 12px;
   text-transform: uppercase;
   letter-spacing: 2.5px;
   font-weight: 500;
-  color: white; 
+  color: white;
   background-color: #0096FF;
   border: none;
   border-radius: 45px;
@@ -25,28 +12,15 @@
   transition: all 0.3s ease 0s;
   cursor: pointer;
   outline: none;
-  text-decoration: none;
-  display:flex
 }
 
-.lsb-link:hover {
+button:hover {
   background-color: #23c483;
   box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
   color: #fff;
   transform: translateY(-7px);
-  text-decoration: none;
-  display:flex
 }
 
-.lsb-link a,
-.lsb-link a:visited {
-  color: #ffffff;
-  text-decoration: none;
-  font-size: 18px;
-  display:flex
-}
-
-.lsb-link a:active {
+button:active {
   transform: translateY(-1px);
-  display:flex
 }
