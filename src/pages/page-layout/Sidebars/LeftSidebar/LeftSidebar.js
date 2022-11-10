@@ -1,7 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
-
 import "./LeftSidebar.css";
+import Login from "../../../../Components/Login";
+import Register from "../../../../Components/Register";
+import Update from "../../../../Components/Update";
+import Post from "../../../../Components/Post";
 
 const LeftSidebar = () => {
   return (
@@ -57,8 +60,15 @@ const LeftSidebar = () => {
         <Link to={`/messages`}>Messages</Link>
       </div>
 
-      <div className="lsb-bark-button">BARK</div>
+      <div>
+        <Login /><br></br>
+        <Register /><br></br>
+        <Update /><br></br>
+        <Post /><br></br>
+
+      </div>
     </div>
+
   );
 };
 

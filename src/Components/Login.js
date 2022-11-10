@@ -15,8 +15,7 @@ const Login = () => {
       <Modal
         isOpen={isOpen}
         onRequestClose={toggleModal}
-        contentLabel=""
-      >
+        contentLabel="">
 
 <div className="specialheading3">
           
