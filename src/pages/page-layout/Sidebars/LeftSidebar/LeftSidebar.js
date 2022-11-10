@@ -8,7 +8,7 @@ const LeftSidebar = () => {
     <div>
       <div className="lsb-logo">
         <Link to={`/`}>
-          <img src="./shoebillorange.png" alt="shoebill logo" />
+          <img src="./shoebillorange.png" width="200" height="200" alt="shoebill logo" />
         </Link>
       </div>
 
