@@ -11,7 +11,7 @@ const Update = () => {
   return (
     <div className="">
       <button onClick={toggleModal}>
-  <i class="fas fa-thumbs-up"></i> Edit Profile
+      <i class="fa-solid fa-user-pen"></i> Edit Profile
 </button>
 
       <Modal

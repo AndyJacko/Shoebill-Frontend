@@ -12,8 +12,10 @@ const Login = () => {
     <div className="">
       
       <button onClick={toggleModal}>
-  <i class="fas fa-thumbs-up"></i> Login
+  <i class="fa-solid fa-arrow-right-to-bracket"></i> Login
 </button>
+
+
 
       <Modal
         isOpen={isOpen}

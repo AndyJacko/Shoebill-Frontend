@@ -11,7 +11,9 @@ const Register = () => {
   return (
     <div className="">
       <button onClick={toggleModal}>
-  <i class="fas fa-thumbs-up"></i> Register
+      <i class="fa-solid fa-user-pen"></i> Register
+    
+      {/* <i class="fa-solid fa-file-pen"></i> */}
 </button>
 
       <Modal
