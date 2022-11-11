@@ -1,0 +1,41 @@
+.home-page-bark-item-container {
+  padding: 10px 0;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #ffffff;
+  display: flex;
+}
+
+.home-page-bark-item-profilepic {
+  width: 50px;
+}
+
+.home-page-bark-item-bark-container {
+  padding: 0 0 10px 20px;
+}
+
+.home-page-bark-item-bark-container a,
+.home-page-bark-item-bark-container a:hover,
+.home-page-bark-item-bark-container a:visited {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.home-page-bark-item-comment {
+  margin: 10px 0;
+}
+
+.home-page-bark-item-crl-container,
+.home-page-bark-item-crl {
+  display: flex;
+}
+
+.home-page-bark-item-crl {
+  margin-right: 20px;
+}
+
+.home-page-bark-item-icon {
+  height: 20px;
+  width: 20px;
+  margin-right: 5px;
+  fill: #ffffff;
+}
