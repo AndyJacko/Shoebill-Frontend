@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Modal from "react-modal";
+import "./Post.css"
 
 const Login = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -39,11 +40,11 @@ const Login = () => {
         }}>
 
         <div className="specialheading3">
-          <p class="contactform">Compose bark</p>
-          <p class="contactform">
+          <p className="contactform">Compose bark</p>
+          <p className="contactform">
             Your post
             <br></br>
-            <input onClick={""} placeholder="What's new, Shoebill?" />
+            <textarea className="bark-input" rows="5" columns="80" onClick={""} placeholder="What's new, Shoebill?" ></textarea>
           </p>
 
           <button onClick={toggleModal}>Bark</button>

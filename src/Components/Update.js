@@ -23,7 +23,7 @@ const Update = () => {
             left: 0,
             right: 0,
             bottom: 0,
-            backgroundColor: 'rgba(255, 255, 255, 0.0)'
+            backgroundColor: 'rgba(255, 255, 255, 0.0)',
           },
           content: {
             position: 'absolute',
@@ -33,7 +33,7 @@ const Update = () => {
             bottom: '0px',
             border: '0px solid #ccc',
             background: 'rgba(255, 255, 255, 0.0)',
-            overflow: 'auto',
+            overflow: 'hidden',
             WebkitOverflowScrolling: 'touch',
             borderRadius: '0px',
             outline: 'none',
@@ -43,26 +43,26 @@ const Update = () => {
 
       <div className="specialheading3">
 
-        <p class="contactform">Update your account details</p>
+        <p className="contactform">Update your account details</p>
 
-        <p class="contactform">Current avatar:<br></br>
+        <p className="contactform">Current avatar:<br></br>
           <img src="https://picsum.photos/200" alt="something" /></p>
 
-        <p class="contactform">Username
+        <p className="contactform">Username
           <br></br><input onClick={("")} placeholder="Username" />
         </p>
 
 
 
-        <p class="contactform">Email
+        <p className="contactform">Email
           <br></br><input onClick={("")} placeholder="Email" />
         </p>
 
-        <p class="contactform">Password
+        <p className="contactform">Password
           <br></br><input onClick={("")} placeholder="Password" />
         </p>
 
-        <p class="contactform">Custom avatar URL
+        <p className="contactform">Custom avatar URL
           <br></br><input onClick={("")} placeholder="Custom avatar URL" />
         </p>
 
