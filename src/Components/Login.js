@@ -42,7 +42,10 @@ const Login = () => {
             WebkitOverflowScrolling: 'touch',
             borderRadius: '0px',
             outline: 'none',
-            padding: '0px',
+            padding: '150px',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'space-between',
           }
         }}>
 

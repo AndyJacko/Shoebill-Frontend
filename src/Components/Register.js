@@ -42,7 +42,10 @@ const Register = () => {
             WebkitOverflowScrolling: 'touch',
             borderRadius: '0px',
             outline: 'none',
-            padding: '0px',
+            padding: '100px',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'space-between'
           }
         }}>
 
