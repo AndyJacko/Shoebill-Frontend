@@ -33,7 +33,7 @@ const Login = () => {
             bottom: '0px',
             border: '0px solid #ccc',
             background: 'rgba(255, 255, 255, 0.0)',
-            overflow: 'auto',
+            overflow: 'hidden',
             WebkitOverflowScrolling: 'touch',
             borderRadius: '0px',
             outline: 'none',
