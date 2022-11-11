@@ -38,11 +38,14 @@ const Register = () => {
             bottom: '0px',
             border: '0px solid #ccc',
             background: 'rgba(255, 255, 255, 0.0)',
-            overflow: 'auto',
+            overflow: 'hidden',
             WebkitOverflowScrolling: 'touch',
             borderRadius: '0px',
             outline: 'none',
-            padding: '0px',
+            padding: '100px',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'space-between'
           }
         }}>
 
