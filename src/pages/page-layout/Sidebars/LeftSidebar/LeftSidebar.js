@@ -6,6 +6,7 @@ import Register from "../../../../Components/Register";
 import Update from "../../../../Components/Update";
 import Post from "../../../../Components/Post";
 
+
 const LeftSidebar = () => {
   return (
     <div>
@@ -61,6 +62,8 @@ const LeftSidebar = () => {
       </div>
 
       <div>
+
+      
         <Login /><br></br>
         <Register /><br></br>
         <Update /><br></br>
