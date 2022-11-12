@@ -13,6 +13,13 @@
   display: flex;
 }
 
+.user-item-info a,
+.user-item-info a:hover,
+.user-item-info a:visited {
+  color: #ffffff;
+  text-decoration: none;
+}
+
 .user-item-pic {
   max-width: 75px;
   min-width: 75px;
@@ -36,10 +43,12 @@
 }
 
 .user-item-follow {
-  padding: 10px 20px;
+  margin-left: 10px;
+  padding: 5px 10px;
   background: #0096ff;
-  border-radius: 10px;
+  border-radius: 5px;
   cursor: pointer;
+  font-weight: bold;
 }
 
 .user-item-follow:hover {

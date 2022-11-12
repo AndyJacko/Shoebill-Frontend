@@ -1,8 +1,10 @@
 /* @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap"); */
-@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.css");
 
 * {
-  font-family: 'Montserrat', sans-serif;  
+  font-family: "Montserrat", sans-serif;
 }
 .App {
   width: 100vw;
@@ -10,7 +12,7 @@
   display: flex;
   align-items: center;
   flex-direction: column;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
 
 .App .openModalBtn {
@@ -23,17 +25,25 @@
   cursor: pointer;
 }
 body {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   color: white;
   padding: 0;
   margin: 0;
-  background: -webkit-linear-gradient(to bottom, #4286f4, #373B44);  /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to bottom, #4286f4, #373B44); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: -webkit-linear-gradient(
+    to bottom,
+    #4286f4,
+    #373b44
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to bottom,
+    #4286f4,
+    #373b44
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   /* background-color: #818589; */
   background-color: #818589;
-  background-size:cover;
+  background-size: cover;
   background-repeat: no-repeat;
-  background-attachment:fixed;
+  background-attachment: fixed;
   background-position: center;
 }
 
@@ -42,7 +52,6 @@ background: linear-gradient(to bottom, #4286f4, #373B44); /* W3C, IE 10+/ Edge, 
   flex-wrap: wrap;
   justify-content: center;
   /* background-image: linear-gradient(to bottom right, #3a343a, #241f24); */
-
 }
 
 .catpics {
@@ -65,7 +74,7 @@ background: linear-gradient(to bottom, #4286f4, #373B44); /* W3C, IE 10+/ Edge, 
   inset: 0;
   font-size: 2rem;
   padding: 1rem;
-  background: rgba(255, 255, 255, .4);
+  background: rgba(255, 255, 255, 0.4);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -90,13 +99,13 @@ background: linear-gradient(to bottom, #4286f4, #373B44); /* W3C, IE 10+/ Edge, 
 }
 
 button {
-  padding: 1.3em 3em;
-  font-size: 12px;
+  padding: 0.6em 3em;
+  font-size: 18px;
   text-transform: uppercase;
   letter-spacing: 2.5px;
   font-weight: 500;
   color: white;
-  background-color: #0096FF;
+  background-color: #0096ff;
   border: none;
   border-radius: 45px;
   box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
@@ -117,7 +126,7 @@ button:active {
 }
 
 nav {
-  background: #0096FF;
+  background: #0096ff;
   width: 100%;
   display: block;
   text-decoration: none;
@@ -127,7 +136,7 @@ nav {
   overflow: auto;
 }
 
-h1{
+h1 {
   text-align: center;
 }
 
@@ -142,7 +151,8 @@ body.active-modal {
   font-size: 18px;
 }
 
-.modal, .overlay {
+.modal,
+.overlay {
   width: 100vw;
   height: 100vh;
   top: 0;
@@ -153,7 +163,7 @@ body.active-modal {
 }
 
 .overlay {
-  background: rgba(49,49,49,0.8);
+  background: rgba(49, 49, 49, 0.8);
 }
 .modal-content {
   position: absolute;
@@ -174,7 +184,6 @@ body.active-modal {
   right: 10px;
   padding: 5px 7px;
 }
-
 
 .buttontwo {
   padding: 1.3em 3em;
@@ -203,11 +212,18 @@ body.active-modal {
   transform: translateY(-1px);
 }
 
-
 .specialheading3 {
-  background: #373B44;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to bottom, #4286f4, #373B44);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to bottom, #4286f4, #373B44); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: #373b44; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to bottom,
+    #4286f4,
+    #373b44
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to bottom,
+    #4286f4,
+    #373b44
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   flex: auto;
   font-size: 1rem;
   color: white;
@@ -235,4 +251,8 @@ body.active-modal {
   padding: 13px;
   justify-content: center;
   background-image: linear-gradient(to bottom right, #3a343a, #241f24);
+}
+
+.padding-20 {
+  padding: 20px;
 }

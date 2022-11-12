@@ -24,18 +24,19 @@ const AllUsers = () => {
   }, []);
 
   return (
-    <>
+    <div className="padding-20">
+      <h2>All Users</h2>
+
       {isLoading && <Spinner />}
 
       {!isLoading && users[0]._id && (
         <>
-          <h2>All Users</h2>
           {users.map((user) => (
             <UserItem key={user._id} user={user} />
           ))}
         </>
       )}
-    </>
+    </div>
   );
 };
 
