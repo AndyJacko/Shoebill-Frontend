@@ -27,7 +27,7 @@ const HomePage = () => {
 
   return (
     <>
-      <h2>Latest Barks</h2>
+      <h2 className="padding-20">Latest Barks</h2>
 
       {isLoading && <Spinner />}
 
