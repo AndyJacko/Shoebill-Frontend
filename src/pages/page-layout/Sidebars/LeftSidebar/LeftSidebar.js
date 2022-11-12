@@ -3,10 +3,9 @@ import { Link } from "react-router-dom";
 import "./LeftSidebar.css";
 import Login from "../../../../Components/Login";
 import Register from "../../../../Components/Register";
-import Update from "../../../../Components/Update";
 import Post from "../../../../Components/Post";
 
-const LeftSidebar = () => {
+const LeftSidebar = ({ isLoggedIn, loggedInUser, onLogin, onLogout }) => {
   return (
     <div>
       <div className="lsb-logo">
@@ -38,15 +37,6 @@ const LeftSidebar = () => {
         All Users
       </Link>
 
-      <Link to={`/users/someid`} className="lsb-link">
-        <div className="lsb-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
-            <path d="M224 256c70.7 0 128-57.3 128-128S294.7 0 224 0S96 57.3 96 128s57.3 128 128 128zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512H418.3c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304H178.3z" />
-          </svg>
-        </div>
-        Profile
-      </Link>
-
       <Link to={`/notifications`} className="lsb-link">
         <div className="lsb-icon">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
@@ -65,13 +55,36 @@ const LeftSidebar = () => {
         Messages
       </Link>
 
-      <Login />
+      {!isLoggedIn && <Login onLogin={onLogin} />}
 
-      <Register />
+      {!isLoggedIn && <Register />}
 
-      <Update />
+      {isLoggedIn && (
+        <Link to={`/users/${loggedInUser._id}`} className="lsb-link">
+          <div className="lsb-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+              <path d="M224 256c70.7 0 128-57.3 128-128S294.7 0 224 0S96 57.3 96 128s57.3 128 128 128zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512H418.3c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304H178.3z" />
+            </svg>
+          </div>
+          Profile
+        </Link>
+      )}
 
-      <Post />
+      {isLoggedIn && (
+        <div className="lsb-link" onClick={onLogout}>
+          <div className="lsb-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+              <path d="M534.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-128-128c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L434.7 224 224 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l210.7 0-73.4 73.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l128-128zM192 96c17.7 0 32-14.3 32-32s-14.3-32-32-32l-64 0c-53 0-96 43-96 96l0 256c0 53 43 96 96 96l64 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-64 0c-17.7 0-32-14.3-32-32l0-256c0-17.7 14.3-32 32-32l64 0z" />
+            </svg>
+          </div>
+          Logout
+        </div>
+      )}
+
+      <br />
+      <br />
+
+      {isLoggedIn && <Post />}
     </div>
   );
 };

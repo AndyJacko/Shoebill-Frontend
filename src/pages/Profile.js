@@ -3,9 +3,10 @@ import { useParams } from "react-router-dom";
 
 import UserProfileInfo from "../Components/UserProfileInfo/UserProfileInfo";
 import UserProfileBarkItem from "../Components/UserProfileBarkItem/UserProfileBarkItem";
+import Update from "../Components/Update";
 import Spinner from "../Components/UI/Spinner/Spinner";
 
-const Profile = () => {
+const Profile = ({ isLoggedIn, loggedInUser }) => {
   const [isLoading, setIsLoading] = useState(true);
   const [user, setUser] = useState([]);
 
@@ -32,6 +33,12 @@ const Profile = () => {
       <h2 className="padding-20">User Profile</h2>
 
       {isLoading && <Spinner />}
+
+      {isLoggedIn && id === loggedInUser._id && (
+        <div className="padding-20">
+          <Update />
+        </div>
+      )}
 
       {!isLoading && user._id && (
         <>
