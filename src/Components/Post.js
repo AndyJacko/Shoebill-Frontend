@@ -21,6 +21,7 @@ const Login = () => {
       </div>
 
       <Modal
+        ariaHideApp={false}
         isOpen={isOpen}
         onRequestClose={toggleModal}
         contentLabel=""

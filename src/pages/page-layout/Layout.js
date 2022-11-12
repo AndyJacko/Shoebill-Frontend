@@ -6,19 +6,26 @@ import Latest from "../../Components/Latest/Latest";
 
 import "./Layout.css";
 
-const Layout = ({ children }) => {
+const Layout = (props) => {
+  const { isLoggedIn, loggedInUser, onLogin, onLogout } = props;
+
   return (
     <div className="layout-container">
       <div className="left-sidebar">
-        <LeftSidebar />
+        <LeftSidebar
+          isLoggedIn={isLoggedIn}
+          loggedInUser={loggedInUser}
+          onLogin={onLogin}
+          onLogout={onLogout}
+        />
       </div>
 
       <div className="main-content">
         <div>
-          <Latest />
+          <Latest isLoggedIn={isLoggedIn} loggedInUser={loggedInUser} />
         </div>
 
-        <div className="page-content">{children}</div>
+        <div className="page-content">{props.children}</div>
       </div>
 
       <div className="right-sidebar">
