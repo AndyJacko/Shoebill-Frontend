@@ -20,6 +20,7 @@ const Register = () => {
       </div>
 
       <Modal
+        ariaHideApp={false}
         isOpen={isOpen}
         onRequestClose={toggleModal}
         contentLabel=""
