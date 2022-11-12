@@ -29,7 +29,7 @@ const Profile = () => {
 
   return (
     <>
-      <h2>User Profile</h2>
+      <h2 className="padding-20">User Profile</h2>
 
       {isLoading && <Spinner />}
 
@@ -37,9 +37,9 @@ const Profile = () => {
         <>
           <UserProfileInfo user={user} />
 
-          {user.posts && (
+          {user.posts[0] && (
             <div>
-              <h2>Barks</h2>
+              <h2 className="padding-20">Barks</h2>
 
               {user.posts.map((post) => (
                 <UserProfileBarkItem key={post._id} post={post} />
