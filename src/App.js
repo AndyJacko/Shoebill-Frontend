@@ -10,6 +10,7 @@ const NotFound = React.lazy(() => import("./pages/NotFound"));
 const MessagesPage = React.lazy(() => import("./pages/Messages"));
 const NotificationsPage = React.lazy(() => import("./pages/Notifications"));
 const ProfilePage = React.lazy(() => import("./pages/Profile"));
+const EditProfilePage = React.lazy(() => import("./pages/EditProfile"));
 
 const App = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -51,6 +52,23 @@ const App = () => {
               />
             }
           />
+
+          {isLoggedIn && (
+            <Route
+              path="/editprofile"
+              element={
+                <EditProfilePage
+                  isLoggedIn={isLoggedIn}
+                  loggedInUser={loggedInUser}
+                />
+              }
+            />
+          )}
+
+          {!isLoggedIn && (
+            <Route path="/editprofile" element={<Navigate replace to="/" />} />
+          )}
+
           <Route path="/notfound" element={<NotFound />} />
 
           <Route path="*" element={<Navigate replace to="/notfound" />} />
