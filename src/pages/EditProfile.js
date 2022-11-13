@@ -1,7 +1,9 @@
 import React from "react";
 
-const EditProfile = () => {
-  return <div>EditProfile</div>;
+import EditProfileForm from "../Components/EditProfileForm/EditProfileForm";
+
+const EditProfile = ({ loggedInUser }) => {
+  return <EditProfileForm loggedInUser={loggedInUser} />;
 };
 
 export default EditProfile;

@@ -69,12 +69,7 @@ const App = () => {
           {isLoggedIn && (
             <Route
               path="/editprofile"
-              element={
-                <EditProfilePage
-                  isLoggedIn={isLoggedIn}
-                  loggedInUser={loggedInUser}
-                />
-              }
+              element={<EditProfilePage loggedInUser={loggedInUser} />}
             />
           )}
 
