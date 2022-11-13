@@ -1,0 +1,18 @@
+.edit-profile-form-container {
+  padding: 20px;
+  margin-right: 20px;
+}
+
+.edit-profile-form-container input {
+  padding: 10px;
+  width: 100%;
+  color: #ffffff;
+  background: transparent;
+  border: 1px solid #ffffff;
+  border-radius: 5px;
+  font-weight: bold;
+}
+.edit-profile-form-container input::placeholder {
+  color: #000000;
+  font-weight: normal;
+}
