@@ -5,19 +5,18 @@ import "./Latest.css";
 const Latest = ({ isLoggedIn, loggedInUser }) => {
   return (
     <>
-      {isLoggedIn && (
-        <>
-          <div className="padding-20">
-            <strong>
-              Welcome back&nbsp;
-              {loggedInUser.realname
-                ? loggedInUser.realname
-                : loggedInUser.username}
-            </strong>
-          </div>
-        </>
-      )}
-      <div className="latest-barks">Latest Barks</div>
+      <div className="latest-barks">
+        <h2>Shoebill</h2>
+
+        {isLoggedIn && (
+          <strong>
+            Welcome back&nbsp;
+            {loggedInUser.realname
+              ? loggedInUser.realname
+              : loggedInUser.username}
+          </strong>
+        )}
+      </div>
     </>
   );
 };
