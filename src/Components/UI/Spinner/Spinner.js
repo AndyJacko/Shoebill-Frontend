@@ -4,7 +4,7 @@ import "./Spinner.css";
 
 const Spinner = () => {
   return (
-    <div>
+    <div className="padding-20">
       <span className="loader"></span>
     </div>
   );
