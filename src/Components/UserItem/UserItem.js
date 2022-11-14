@@ -15,8 +15,8 @@ const UserItem = ({ user }) => {
       }
     };
 
-    if (user.pic) {
-      setUserPic(user.pic);
+    if (user.profilepic) {
+      setUserPic(user.profilepic);
     } else {
       getUserPic();
     }
@@ -31,16 +31,12 @@ const UserItem = ({ user }) => {
 
         <div>
           <Link to={`/users/${user._id}`}>
-            {user.username}
+            {user.realname ? user.realname : user.username}
             &nbsp;
             <span className="user-info-username">@{user.username}</span>
           </Link>
 
-          <div className="user-item-bio">
-            {user.bio
-              ? user.bio
-              : "Lorem ipsum dolor sit amet, consectetur adipiscing elit"}
-          </div>
+          <div className="user-item-bio">{user.bio}</div>
         </div>
       </div>
 

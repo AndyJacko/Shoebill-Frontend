@@ -38,7 +38,7 @@ const Login = ({ onLogin }) => {
     const data = await response.json();
 
     if (data.text) {
-      onLogin(data.user);
+      onLogin(data.user, data.token);
       toggleModal();
     }
   };

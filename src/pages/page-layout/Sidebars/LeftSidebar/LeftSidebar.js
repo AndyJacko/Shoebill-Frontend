@@ -57,7 +57,7 @@ const LeftSidebar = ({ isLoggedIn, loggedInUser, onLogin, onLogout }) => {
 
       {!isLoggedIn && <Login onLogin={onLogin} />}
 
-      {!isLoggedIn && <Register />}
+      {!isLoggedIn && <Register onRegister={onLogin} />}
 
       {isLoggedIn && (
         <Link to={`/users/${loggedInUser._id}`} className="lsb-link">
@@ -84,7 +84,7 @@ const LeftSidebar = ({ isLoggedIn, loggedInUser, onLogin, onLogout }) => {
       <br />
       <br />
 
-      {isLoggedIn && <Post />}
+      {isLoggedIn && <Post user={loggedInUser} />}
     </div>
   );
 };

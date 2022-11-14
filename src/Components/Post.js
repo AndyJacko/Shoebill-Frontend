@@ -1,9 +1,42 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 import Modal from "react-modal";
 import "./Post.css";
 
-const Login = () => {
+const Post = ({ user }) => {
+  const location = useLocation();
+  const navigate = useNavigate();
   const [isOpen, setIsOpen] = useState(false);
+
+  const commentInputRef = useRef();
+
+  const createPostHandler = async (e) => {
+    e.preventDefault();
+
+    const postcomment = commentInputRef.current.value;
+
+    if (!postcomment || postcomment.trim() === "") {
+      return;
+    }
+
+    const response = await fetch(
+      `https://cnmaster-shoebill.herokuapp.com/createPost/`,
+      {
+        method: "POST",
+        body: JSON.stringify({ user: user._id, postcomment }),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    );
+    const data = await response.json();
+
+    if (data.message) {
+      toggleModal();
+
+      navigate(`/`);
+    }
+  };
 
   function toggleModal() {
     setIsOpen(!isOpen);
@@ -49,24 +82,22 @@ const Login = () => {
             padding: "0px",
           },
         }}>
-        <div className="specialheading3">
-          <p className="contactform">Compose bark</p>
+        <form className="specialheading3" onSubmit={createPostHandler}>
+          <h2>Compose Bark</h2>
           <p className="contactform">
-            Your post
-            <br></br>
             <textarea
               className="bark-input"
               rows="5"
               columns="80"
-              onClick={""}
-              placeholder="What's new, Shoebill?"></textarea>
+              placeholder="What's new, Shoebill?"
+              ref={commentInputRef}></textarea>
           </p>
 
-          <button onClick={toggleModal}>Bark</button>
-        </div>
+          <button type="submit">Bark</button>
+        </form>
       </Modal>
     </div>
   );
 };
 
-export default Login;
+export default Post;
