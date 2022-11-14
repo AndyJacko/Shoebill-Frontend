@@ -19,11 +19,29 @@ const App = () => {
   const [loggedInUser, setLoggedInUser] = useState();
 
   useEffect(() => {
+    const getUser = async (cookie) => {
+      const response = await fetch(
+        `https://cnmaster-shoebill.herokuapp.com/loginUser/`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${cookie}`,
+          },
+        }
+      );
+      const data = await response.json();
+
+      if (data.user) {
+        setIsLoggedIn(true);
+        setLoggedInUser(data.user);
+      }
+    };
+
     const cookie = getCookie("jwt_token");
 
     if (cookie) {
-      // console.log(cookie);
-      //autologin
+      getUser(cookie);
     }
   }, []);
 
