@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 import "./WhoToFollow.css";
 
@@ -14,8 +15,8 @@ const UserItem = ({ user }) => {
       }
     };
 
-    if (user.pic) {
-      setUserPic(user.pic);
+    if (user.profilepic) {
+      setUserPic(user.profilepic);
     } else {
       getUserPic();
     }
@@ -24,15 +25,20 @@ const UserItem = ({ user }) => {
   return (
     <div className="whotofollow-container">
       <div className="whotofollow-info">
-        <div className="whotofollow-pic">
+        <Link to={`/users/${user._id}`} className="whotofollow-pic">
           {userpic && <img src={userpic} alt={user.username} />}
-        </div>
+        </Link>
 
         <div>
-          <div>{user.username}</div>
-          <div>
+          <Link to={`/users/${user._id}`}>
+            <strong>{user.realname ? user.realname : user.username} </strong>
+          </Link>
+
+          <br />
+
+          <Link to={`/users/${user._id}`}>
             <span className="whotofollow-username">@{user.username}</span>
-          </div>
+          </Link>
         </div>
       </div>
 

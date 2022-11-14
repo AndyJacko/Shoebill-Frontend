@@ -2,7 +2,8 @@
   margin: 10px 0;
   padding: 10px;
   border-radius: 5px;
-  background: #2f3336;
+  background: #2f333633;
+  border: 1px solid #333333;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -12,6 +13,13 @@
   display: flex;
 }
 
+.user-item-info a,
+.user-item-info a:hover,
+.user-item-info a:visited {
+  color: #ffffff;
+  text-decoration: none;
+}
+
 .user-item-pic {
   max-width: 75px;
   min-width: 75px;
@@ -19,7 +27,7 @@
   min-height: 75px;
   margin-right: 20px;
   border-radius: 50%;
-  border: 2px solid #999999;
+  border: 2px solid #0096ff;
   overflow: hidden;
   display: flex;
   align-items: center;
@@ -31,18 +39,18 @@
 }
 
 .user-info-username {
-  color: #71767b;
+  color: #dadada;
 }
 
 .user-item-follow {
-  padding: 10px 20px;
-  background: #0d350d;
-  border: 1px solid #999999;
-  border-radius: 10px;
+  margin-left: 10px;
+  padding: 5px 10px;
+  background: #0096ff;
+  border-radius: 5px;
   cursor: pointer;
+  font-weight: bold;
 }
 
 .user-item-follow:hover {
-  background: #041104;
-  border: 1px solid #0d350d;
+  background: #23c483;
 }

@@ -1,4 +1,5 @@
 .user-profile-container {
+  padding: 20px;
   font-size: 14px;
 }
 
@@ -13,7 +14,7 @@
   width: 150px;
   height: 150px;
   border-radius: 50%;
-  border: 2px solid white;
+  border: 2px solid #0096ff;
 }
 
 .user-profile-realname {
@@ -40,6 +41,13 @@
 
 .user-profile-llj-item {
   margin-right: 10px;
+}
+
+.user-profile-llj-item a,
+.user-profile-llj-item a:hover,
+.user-profile-llj-item a:visited {
+  color: #ffffff;
+  text-decoration: none;
 }
 
 .user-profile-ff {
