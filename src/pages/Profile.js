@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 
 import UserProfileInfo from "../Components/UserProfileInfo/UserProfileInfo";
 import UserProfileBarkItem from "../Components/UserProfileBarkItem/UserProfileBarkItem";
@@ -7,7 +7,8 @@ import Spinner from "../Components/UI/Spinner/Spinner";
 
 import "./Profile.css";
 
-const Profile = ({ isLoggedIn, loggedInUser }) => {
+const Profile = ({ isLoggedIn, loggedInUser, onLogout }) => {
+  const navigate = useNavigate();
   const [isLoading, setIsLoading] = useState(true);
   const [user, setUser] = useState([]);
 
@@ -31,7 +32,21 @@ const Profile = ({ isLoggedIn, loggedInUser }) => {
 
   const deleteHandler = async () => {
     if (window.confirm("Delete your profile?")) {
-      //delete functionality
+      const response = await fetch(
+        `https://cnmaster-shoebill.herokuapp.com/deleteUser/${user._id}`,
+        {
+          method: "DELETE",
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
+      const data = await response.json();
+
+      if (data.message) {
+        onLogout();
+        navigate("/");
+      }
     }
   };
 
