@@ -7,7 +7,7 @@ const Register = ({ onRegister }) => {
   const usernameInputRef = useRef();
   const passwordInputRef = useRef();
   const emailInputRef = useRef();
-  const customurlInputRef = useRef();
+  const profilepicInputRef = useRef();
 
   function toggleModal() {
     setIsOpen(!isOpen);
@@ -18,26 +18,34 @@ const Register = ({ onRegister }) => {
     const username = usernameInputRef.current.value;
     const password = passwordInputRef.current.value;
     const email = emailInputRef.current.value;
-    const customurl = customurlInputRef.current.value;
+    const profilepic = profilepicInputRef.current.value;
 
     if (
       !username ||
       !password ||
       !email ||
-      !customurl ||
       username.trim() === "" ||
       password.trim() === "" ||
-      email.trim() === "" ||
-      customurl.trim() === "" 
+      email.trim() === ""
     ) {
       return;
+    }
+
+    const newUser = {
+      username,
+      password,
+      email,
+    };
+
+    if (profilepic && profilepic.trim() !== "") {
+      newUser.profilepic = profilepic;
     }
 
     const response = await fetch(
       `https://cnmaster-shoebill.herokuapp.com/createUser/`,
       {
         method: "POST",
-        body: JSON.stringify({ username, password, email, customurl }),
+        body: JSON.stringify(newUser),
         headers: {
           "Content-Type": "application/json",
         },
@@ -45,7 +53,7 @@ const Register = ({ onRegister }) => {
     );
     const data = await response.json();
 
-    if (data.text) {
+    if (data.token) {
       onRegister(data.user, data.token);
       toggleModal();
     }
@@ -105,11 +113,7 @@ const Register = ({ onRegister }) => {
           <p className="contactform">
             Email
             <br></br>
-            <input
-              placeholder="Email"
-              type="?"
-              ref={emailInputRef}
-            />
+            <input placeholder="Email" type="?" ref={emailInputRef} />
           </p>
 
           <p className="contactform">
@@ -126,9 +130,9 @@ const Register = ({ onRegister }) => {
             Custom avatar URL
             <br></br>
             <input
-              placeholder="Custom avatar URL"
-              type="?"
-              ref={customurlInputRef}
+              placeholder="Custom Avatar URL"
+              type="text"
+              ref={profilepicInputRef}
             />
           </p>
 
