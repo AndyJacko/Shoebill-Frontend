@@ -1,8 +1,15 @@
-import React, { useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
+import { useNavigate } from "react-router-dom";
+
+import Spinner from "../UI/Spinner/Spinner";
 
 import "./EditProfileForm.css";
 
 const EditProfileForm = ({ loggedInUser }) => {
+  const navigate = useNavigate();
+  const [isLoading, setIsLoading] = useState(true);
+  const [user, setUser] = useState([]);
+
   const usernameInputRef = useRef();
   const emailInputRef = useRef();
   const passwordInputRef = useRef();
@@ -13,7 +20,23 @@ const EditProfileForm = ({ loggedInUser }) => {
   const bioInputRef = useRef();
   const linkInputRef = useRef();
 
-  const submitHandler = (e) => {
+  useEffect(() => {
+    const getUser = async () => {
+      const response = await fetch(
+        `https://cnmaster-shoebill.herokuapp.com/readUserOne/${loggedInUser._id}`
+      );
+      const data = await response.json();
+
+      if (data.user._id) {
+        setIsLoading(false);
+        setUser(data.user);
+      }
+    };
+
+    getUser();
+  }, [loggedInUser._id]);
+
+  const submitHandler = async (e) => {
     e.preventDefault();
 
     const username = usernameInputRef.current.value;
@@ -26,121 +49,146 @@ const EditProfileForm = ({ loggedInUser }) => {
     const bio = bioInputRef.current.value;
     const link = linkInputRef.current.value;
 
+    if (!username || !email || username.trim() === "" || email.trim() === "") {
+      return;
+    }
+
     const newUserDetails = {
+      id: loggedInUser._id,
       username,
       email,
-      password: password || loggedInUser.password,
       realname,
       profilepic,
-      birthdate,
+      birthdate: new Date(birthdate),
       location,
       bio,
       link,
     };
 
-    console.log(newUserDetails);
-    //send to api
+    if (password && password.trim() !== "") {
+      newUserDetails.password = password;
+    }
+
+    const response = await fetch(
+      `https://cnmaster-shoebill.herokuapp.com/updateUser/`,
+      {
+        method: "PUT",
+        body: JSON.stringify(newUserDetails),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    );
+    const data = await response.json();
+
+    if (data.message) {
+      navigate(`/users/${loggedInUser._id}`);
+    }
   };
 
   return (
     <div className="edit-profile-form-container">
       <h2>Edit Profile</h2>
 
-      <form onSubmit={submitHandler}>
-        <div>
-          <p>Username</p>
-          <input
-            type="text"
-            placeholder="Username"
-            ref={usernameInputRef}
-            defaultValue={loggedInUser.username}
-          />
-        </div>
+      {isLoading && <Spinner />}
 
-        <div>
-          <p>Email Address</p>
-          <input
-            type="email"
-            placeholder="Email Address"
-            ref={emailInputRef}
-            defaultValue={loggedInUser.email}
-          />
-        </div>
+      {!isLoading && user._id && (
+        <form onSubmit={submitHandler}>
+          <div>
+            <p>Username</p>
+            <input
+              type="text"
+              placeholder="Username"
+              ref={usernameInputRef}
+              defaultValue={user.username}
+            />
+          </div>
 
-        <div>
-          <p>Password</p>
-          <input
-            type="password"
-            placeholder="New Password"
-            ref={passwordInputRef}
-          />
-        </div>
+          <div>
+            <p>Email Address</p>
+            <input
+              type="email"
+              placeholder="Email Address"
+              ref={emailInputRef}
+              defaultValue={user.email}
+            />
+          </div>
 
-        <div>
-          <p>Real Name</p>
-          <input
-            type="text"
-            placeholder="Real Name"
-            ref={realnameInputRef}
-            defaultValue={loggedInUser.realname}
-          />
-        </div>
+          <div>
+            <p>Password</p>
+            <input
+              type="password"
+              placeholder="New Password"
+              ref={passwordInputRef}
+            />
+          </div>
 
-        <div>
-          <p>Custom Avatar URL</p>
-          <input
-            type="text"
-            placeholder="https://linktoyourimage.com/pic.jpg"
-            ref={profilepicInputRef}
-            defaultValue={loggedInUser.profilepic}
-          />
-        </div>
+          <div>
+            <p>Real Name</p>
+            <input
+              type="text"
+              placeholder="Real Name"
+              ref={realnameInputRef}
+              defaultValue={user.realname}
+            />
+          </div>
 
-        <div>
-          <p>Date Of Birth</p>
-          <input
-            type="date"
-            placeholder="D.O.B,"
-            ref={birthdateInputRef}
-            defaultValue={loggedInUser.birthdate}
-          />
-        </div>
+          <div>
+            <p>Custom Avatar URL</p>
+            <input
+              type="text"
+              placeholder="https://linktoyourimage.com/pic.jpg"
+              ref={profilepicInputRef}
+              defaultValue={user.profilepic}
+            />
+          </div>
 
-        <div>
-          <p>Location</p>
-          <input
-            type="text"
-            placeholder="Manchester, UK"
-            ref={locationInputRef}
-            defaultValue={loggedInUser.location}
-          />
-        </div>
+          <div>
+            <p>Date Of Birth</p>
+            <input
+              type="date"
+              placeholder="D.O.B,"
+              ref={birthdateInputRef}
+              defaultValue={user.birthdate}
+            />
+          </div>
 
-        <div>
-          <p>Bio</p>
-          <input
-            type="text"
-            placeholder="A short bio about yourself"
-            ref={bioInputRef}
-            defaultValue={loggedInUser.bio}
-          />
-        </div>
+          <div>
+            <p>Location</p>
+            <input
+              type="text"
+              placeholder="Manchester, UK"
+              ref={locationInputRef}
+              defaultValue={user.location}
+            />
+          </div>
 
-        <div>
-          <p>Website Link</p>
-          <input
-            type="text"
-            placeholder="Your website link"
-            ref={linkInputRef}
-            defaultValue={loggedInUser.link}
-          />
-        </div>
+          <div>
+            <p>Bio</p>
+            <input
+              type="text"
+              placeholder="A short bio about yourself"
+              ref={bioInputRef}
+              defaultValue={user.bio}
+            />
+          </div>
 
-        <br />
-        <br />
+          <div>
+            <p>Website Link</p>
+            <input
+              type="text"
+              placeholder="https://yourwebsite.com"
+              ref={linkInputRef}
+              defaultValue={user.link}
+            />
+          </div>
 
-        <button type="submit">SAVE PROFILE</button>
-      </form>
+          <br />
+          <br />
+
+          <button type="submit">SAVE PROFILE</button>
+        </form>
+      )}
     </div>
   );
 };
