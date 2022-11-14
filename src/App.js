@@ -62,6 +62,7 @@ const App = () => {
               <ProfilePage
                 isLoggedIn={isLoggedIn}
                 loggedInUser={loggedInUser}
+                onLogout={onLogout}
               />
             }
           />

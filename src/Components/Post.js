@@ -34,11 +34,7 @@ const Post = ({ user }) => {
     if (data.message) {
       toggleModal();
 
-      if (location.pathname === "/") {
-        navigate(`/users/${user._id}`, { replace: true });
-      } else {
-        navigate(`/`, { replace: true });
-      }
+      navigate(`/`);
     }
   };
 
