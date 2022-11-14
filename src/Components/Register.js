@@ -122,7 +122,7 @@ const Register = ({ onRegister }) => {
             />
           </p>
 
-          {/* <p className="contactform">
+          <p className="contactform">
             Custom avatar URL
             <br></br>
             <input
@@ -130,7 +130,7 @@ const Register = ({ onRegister }) => {
               type="?"
               ref={customurlInputRef}
             />
-          </p> */}
+          </p>
 
           <button type="submit">Register</button>
         </form>
