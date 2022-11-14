@@ -84,7 +84,7 @@ const LeftSidebar = ({ isLoggedIn, loggedInUser, onLogin, onLogout }) => {
       <br />
       <br />
 
-      {isLoggedIn && <Post />}
+      {isLoggedIn && <Post user={loggedInUser} />}
     </div>
   );
 };
