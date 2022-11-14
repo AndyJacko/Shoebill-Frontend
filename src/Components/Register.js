@@ -126,7 +126,7 @@ const Register = ({ onRegister }) => {
             Custom avatar URL
             <br></br>
             <input
-              placeholder="Password"
+              placeholder="Custom avatar URL"
               type="?"
               ref={customurlInputRef}
             />
