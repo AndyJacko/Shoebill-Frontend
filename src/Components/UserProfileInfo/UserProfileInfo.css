@@ -43,6 +43,13 @@
   margin-right: 10px;
 }
 
+.user-profile-llj-item a,
+.user-profile-llj-item a:hover,
+.user-profile-llj-item a:visited {
+  color: #ffffff;
+  text-decoration: none;
+}
+
 .user-profile-ff {
   margin-right: 10px;
 }

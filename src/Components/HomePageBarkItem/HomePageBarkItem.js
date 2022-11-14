@@ -37,8 +37,8 @@ const HomePageBarkItem = ({ post }) => {
       }
     };
 
-    if (post.user.pic) {
-      setUserPic(post.user.pic);
+    if (post.user.profilepic) {
+      setUserPic(post.user.profilepic);
     } else {
       getUserPic();
     }
@@ -55,7 +55,7 @@ const HomePageBarkItem = ({ post }) => {
       <div className="home-page-bark-item-bark-container">
         <div>
           <Link to={`/users/${post.user._id}`}>
-            <strong>{post.user.username} </strong>
+            <strong>{post.user.realname ? post.user.realname : post.user.username} </strong>
           </Link>
           <Link to={`/users/${post.user._id}`}>
             <span className="whotofollow-username">@{post.user.username}</span>
