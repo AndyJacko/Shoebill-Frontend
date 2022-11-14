@@ -37,7 +37,7 @@ const Register = ({ onRegister }) => {
       `https://cnmaster-shoebill.herokuapp.com/createUser/`,
       {
         method: "POST",
-        body: JSON.stringify({ username, password }),
+        body: JSON.stringify({ username, password, email, customurl }),
         headers: {
           "Content-Type": "application/json",
         },
