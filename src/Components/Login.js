@@ -1,12 +1,47 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import Modal from "react-modal";
 
-const Login = () => {
+const Login = ({ onLogin }) => {
   const [isOpen, setIsOpen] = useState(false);
+
+  const usernameInputRef = useRef();
+  const passwordInputRef = useRef();
 
   function toggleModal() {
     setIsOpen(!isOpen);
   }
+
+  const loginHandler = async (e) => {
+    e.preventDefault();
+    const username = usernameInputRef.current.value;
+    const password = passwordInputRef.current.value;
+
+    if (
+      !username ||
+      !password ||
+      username.trim() === "" ||
+      password.trim() === ""
+    ) {
+      return;
+    }
+
+    const response = await fetch(
+      `https://cnmaster-shoebill.herokuapp.com/loginUser/`,
+      {
+        method: "POST",
+        body: JSON.stringify({ username, password }),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    );
+    const data = await response.json();
+
+    if (data.text) {
+      onLogin(data.user, data.token);
+      toggleModal();
+    }
+  };
 
   return (
     <div className="">
@@ -20,6 +55,7 @@ const Login = () => {
       </div>
 
       <Modal
+        ariaHideApp={false}
         isOpen={isOpen}
         onRequestClose={toggleModal}
         contentLabel=""
@@ -50,22 +86,26 @@ const Login = () => {
             justifyContent: "space-between",
           },
         }}>
-        <div className="specialheading3">
+        <form className="specialheading3" onSubmit={loginHandler}>
           <p className="contactform">Shoebill Login</p>
           <p className="contactform">
             Username
             <br></br>
-            <input onClick={""} placeholder="Username" />
+            <input placeholder="Username" type="text" ref={usernameInputRef} />
           </p>
 
           <p className="contactform">
             Password
             <br></br>
-            <input onClick={""} placeholder="Password" />
+            <input
+              placeholder="Password"
+              type="password"
+              ref={passwordInputRef}
+            />
           </p>
 
-          <button onClick={toggleModal}>Login</button>
-        </div>
+          <button type="submit">Login</button>
+        </form>
       </Modal>
     </div>
   );

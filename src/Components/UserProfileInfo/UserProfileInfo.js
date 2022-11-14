@@ -14,8 +14,8 @@ const UserProfileInfo = ({ user }) => {
       }
     };
 
-    if (user.pic) {
-      setUserPic(user.pic);
+    if (user.profilepic) {
+      setUserPic(user.profilepic);
     } else {
       getUserPic();
     }
@@ -54,7 +54,13 @@ const UserProfileInfo = ({ user }) => {
             </svg>
           </div>
           <div className="user-profile-llj-item">
-            {user.link ? user.link : "No Link"}
+            {user.link ? (
+              <a href={user.link} target="_blank" rel="noreferrer">
+                {user.link}
+              </a>
+            ) : (
+              "No Link"
+            )}
           </div>
         </div>
 
@@ -68,7 +74,7 @@ const UserProfileInfo = ({ user }) => {
             Joined&nbsp;
             {new Date(user.joindate).toLocaleString("en-GB", {
               year: "numeric",
-              month: "long",
+              month: "short",
             })}
           </div>
         </div>
