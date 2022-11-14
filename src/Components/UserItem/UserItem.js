@@ -36,11 +36,7 @@ const UserItem = ({ user }) => {
             <span className="user-info-username">@{user.username}</span>
           </Link>
 
-          <div className="user-item-bio">
-            {user.bio
-              ? user.bio
-              : "Lorem ipsum dolor sit amet, consectetur adipiscing elit"}
-          </div>
+          <div className="user-item-bio">{user.bio}</div>
         </div>
       </div>
 
