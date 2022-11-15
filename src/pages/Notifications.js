@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 const Notifications = () => {
+  useEffect(() => window.scrollTo(0, 0), []);
+
   return (
     <div className="padding-20">
       <h2>Notifications</h2>
