@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import HomePageBarkItem from "../Components/HomePageBarkItem/HomePageBarkItem";
 import Spinner from "../Components/UI/Spinner/Spinner";
 
-const HomePage = () => {
+const HomePage = ({ loggedInUser }) => {
   const [isLoading, setIsLoading] = useState(true);
   const [posts, setPosts] = useState([]);
 
@@ -36,7 +36,11 @@ const HomePage = () => {
           {posts && (
             <>
               {posts.map((post) => (
-                <HomePageBarkItem key={post._id} post={post} />
+                <HomePageBarkItem
+                  key={post._id}
+                  post={post}
+                  loggedInUser={loggedInUser}
+                />
               ))}
             </>
           )}

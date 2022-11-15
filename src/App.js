@@ -70,7 +70,7 @@ const App = () => {
           </div>
         }>
         <Routes>
-          <Route path="/" element={<HomePage />} />
+          <Route path="/" element={<HomePage loggedInUser={loggedInUser} />} />
           <Route path="/users" element={<AllUsersPage />} />
           <Route path="/messages" element={<MessagesPage />} />
           <Route path="/notifications" element={<NotificationsPage />} />
