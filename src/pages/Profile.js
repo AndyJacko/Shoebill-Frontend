@@ -14,6 +14,8 @@ const Profile = ({ isLoggedIn, loggedInUser, onLogout }) => {
 
   const { id } = useParams();
 
+  useEffect(() => window.scrollTo(0, 0), []);
+
   useEffect(() => {
     const getUser = async () => {
       const response = await fetch(

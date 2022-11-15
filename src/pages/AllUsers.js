@@ -7,6 +7,8 @@ const AllUsers = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [users, setUsers] = useState([]);
 
+  useEffect(() => window.scrollTo(0, 0), []);
+
   useEffect(() => {
     const getUsers = async () => {
       const response = await fetch(
