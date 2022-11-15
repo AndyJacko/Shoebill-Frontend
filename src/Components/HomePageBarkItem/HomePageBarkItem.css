@@ -39,3 +39,11 @@
   margin-right: 5px;
   fill: #ffffff;
 }
+
+.delete-post-icon {
+  height: 20px;
+  width: 20px;
+  margin-right: 5px;
+  fill: #dd0000;
+  cursor: pointer;
+}
