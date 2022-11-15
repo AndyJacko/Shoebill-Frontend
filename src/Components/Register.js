@@ -82,11 +82,11 @@ const Register = ({ onRegister }) => {
             left: 0,
             right: 0,
             bottom: 0,
-            backgroundColor: "rgba(255, 255, 255, 0.0)",
+            backgroundColor: "#00000066",
           },
           content: {
             position: "absolute",
-            top: "200px",
+            top: "120px",
             left: "400px",
             right: "400px",
             bottom: "0px",
@@ -96,47 +96,66 @@ const Register = ({ onRegister }) => {
             WebkitOverflowScrolling: "touch",
             borderRadius: "0px",
             outline: "none",
-            padding: "150px",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "space-between",
+            padding: "0px",
           },
         }}>
+        <div className="modal-close-button" onClick={toggleModal}>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+            <path d="M64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zM175 175c9.4-9.4 24.6-9.4 33.9 0l47 47 47-47c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9l-47 47 47 47c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0l-47-47-47 47c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l47-47-47-47c-9.4-9.4-9.4-24.6 0-33.9z" />
+          </svg>
+        </div>
+
         <form className="specialheading3" onSubmit={RegisterHandler}>
-          <p className="contactform">Shoebill Register</p>
-          <p className="contactform">
-            Username
-            <br></br>
-            <input placeholder="Username" type="text" ref={usernameInputRef} />
-          </p>
+          <h2>Shoebill Register</h2>
+          <div>
+            <div>
+              <p>Username</p>
+              <input
+                className="bark-input"
+                placeholder="Username"
+                type="text"
+                ref={usernameInputRef}
+              />
+            </div>
 
-          <p className="contactform">
-            Email
-            <br></br>
-            <input placeholder="Email" type="?" ref={emailInputRef} />
-          </p>
+            <div>
+              <p>Email</p>
+              <input
+                className="bark-input"
+                placeholder="Email"
+                type="email"
+                ref={emailInputRef}
+              />
+            </div>
 
-          <p className="contactform">
-            Password
-            <br></br>
-            <input
-              placeholder="Password"
-              type="password"
-              ref={passwordInputRef}
-            />
-          </p>
+            <div>
+              <p>Password</p>
+              <input
+                className="bark-input"
+                placeholder="Password"
+                type="password"
+                ref={passwordInputRef}
+              />
+            </div>
 
-          <p className="contactform">
-            Custom avatar URL
-            <br></br>
-            <input
-              placeholder="Custom Avatar URL"
-              type="text"
-              ref={profilepicInputRef}
-            />
-          </p>
+            <div>
+              <p>Custom Avatar URL</p>
+              <input
+                className="bark-input"
+                placeholder="Custom Avatar URL"
+                type="text"
+                ref={profilepicInputRef}
+              />
+            </div>
 
-          <button type="submit">Register</button>
+            <br />
+            <br />
+
+            <button type="submit">Register</button>
+
+            <br />
+            <br />
+          </div>
         </form>
       </Modal>
     </div>

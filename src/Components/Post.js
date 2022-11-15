@@ -1,19 +1,20 @@
 import React, { useRef, useState } from "react";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import Modal from "react-modal";
 import "./Post.css";
 
 const Post = ({ user }) => {
-  const location = useLocation();
   const navigate = useNavigate();
   const [isOpen, setIsOpen] = useState(false);
 
   const commentInputRef = useRef();
+  const picInputRef = useRef();
 
   const createPostHandler = async (e) => {
     e.preventDefault();
 
     const postcomment = commentInputRef.current.value;
+    const postpic = picInputRef.current.value;
 
     if (!postcomment || postcomment.trim() === "") {
       return;
@@ -23,7 +24,7 @@ const Post = ({ user }) => {
       `https://cnmaster-shoebill.herokuapp.com/createPost/`,
       {
         method: "POST",
-        body: JSON.stringify({ user: user._id, postcomment }),
+        body: JSON.stringify({ user: user._id, postcomment, postpic }),
         headers: {
           "Content-Type": "application/json",
         },
@@ -46,8 +47,8 @@ const Post = ({ user }) => {
     <div className="">
       <div className="lsb-link" onClick={toggleModal}>
         <div className="lsb-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-            <path d="M48 64C21.5 64 0 85.5 0 112c0 15.1 7.1 29.3 19.2 38.4L236.8 313.6c11.4 8.5 27 8.5 38.4 0L492.8 150.4c12.1-9.1 19.2-23.3 19.2-38.4c0-26.5-21.5-48-48-48H48zM0 176V384c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V176L294.4 339.2c-22.8 17.1-54 17.1-76.8 0L0 176z" />
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512">
+            <path d="M456 0c-48.6 0-88 39.4-88 88v29.2L12.5 390.6c-14 10.8-16.6 30.9-5.9 44.9s30.9 16.6 44.9 5.9L126.1 384H259.2l46.6 113.1c5 12.3 19.1 18.1 31.3 13.1s18.1-19.1 13.1-31.3L311.1 384H352c1.1 0 2.1 0 3.2 0l46.6 113.2c5 12.3 19.1 18.1 31.3 13.1s18.1-19.1 13.1-31.3l-42-102C484.9 354.1 544 280 544 192V128v-8l80.5-20.1c8.6-2.1 13.8-10.8 11.6-19.4C629 52 603.4 32 574 32H523.9C507.7 12.5 483.3 0 456 0zm0 112c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z" />
           </svg>
         </div>
         Bark
@@ -65,7 +66,7 @@ const Post = ({ user }) => {
             left: 0,
             right: 0,
             bottom: 0,
-            backgroundColor: "rgba(255, 255, 255, 0.0)",
+            backgroundColor: "#00000066",
           },
           content: {
             position: "absolute",
@@ -82,18 +83,40 @@ const Post = ({ user }) => {
             padding: "0px",
           },
         }}>
+        <div className="modal-close-button" onClick={toggleModal}>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+            <path d="M64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zM175 175c9.4-9.4 24.6-9.4 33.9 0l47 47 47-47c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9l-47 47 47 47c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0l-47-47-47 47c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l47-47-47-47c-9.4-9.4-9.4-24.6 0-33.9z" />
+          </svg>
+        </div>
+
         <form className="specialheading3" onSubmit={createPostHandler}>
           <h2>Compose Bark</h2>
-          <p className="contactform">
+          <div>
             <textarea
               className="bark-input"
               rows="5"
               columns="80"
               placeholder="What's new, Shoebill?"
               ref={commentInputRef}></textarea>
-          </p>
 
-          <button type="submit">Bark</button>
+            <div>
+              <p>Custom Bark Image URL</p>
+              <input
+                type="text"
+                placeholder="https://somewebsite.com/pic.jpg"
+                className="bark-input"
+                ref={picInputRef}
+              />
+            </div>
+
+            <br />
+            <br />
+
+            <button type="submit">Bark</button>
+
+            <br />
+            <br />
+          </div>
         </form>
       </Modal>
     </div>

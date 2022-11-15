@@ -94,6 +94,12 @@ const HomePageBarkItem = ({ addLikes, loggedInUser, post }) => {
 
         <div className="home-page-bark-item-comment">{post.postcomment}</div>
 
+        {post.postpic && (
+          <div className="home-page-bark-item-pic">
+            <img src={post.postpic} alt="" />
+          </div>
+        )}
+
         <div className="home-page-bark-item-crl-container">
           <div className="home-page-bark-item-crl">
             <div className="home-page-bark-item-icon">

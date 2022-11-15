@@ -1,3 +1,25 @@
-.bark-input{
-    width: 100%;
+.bark-input {
+  padding: 10px;
+  width: 97%;
+  color: #ffffff;
+  background: #222222;
+  border: 1px solid #ffffff;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.bark-input::placeholder {
+  color: #cccccc;
+  font-weight: normal;
+}
+
+.modal-close-button {
+  height: 40px;
+  width: 40px;
+  fill: #dd0000;
+  cursor: pointer;
+
+  position: absolute;
+  top: 74px;
+  right: 10px;
 }

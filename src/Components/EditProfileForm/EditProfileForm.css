@@ -7,12 +7,12 @@
   padding: 10px;
   width: 100%;
   color: #ffffff;
-  background: transparent;
+  background: #222222;
   border: 1px solid #ffffff;
   border-radius: 5px;
   font-weight: bold;
 }
 .edit-profile-form-container input::placeholder {
-  color: #000000;
+  color: #cccccc;
   font-weight: normal;
 }

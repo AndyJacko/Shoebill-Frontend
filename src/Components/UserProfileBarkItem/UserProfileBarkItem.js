@@ -42,6 +42,12 @@ const UserProfileBarkItem = ({ addLikes, loggedInUser, post }) => {
 
       <div className="bark-item-comment">{post.postcomment}</div>
 
+      {post.postpic && (
+        <div className="home-page-bark-item-pic">
+          <img src={post.postpic} alt="" />
+        </div>
+      )}
+
       <div className="bark-item-crl-container">
         <div className="bark-item-crl">
           <div className="bark-item-icon">
