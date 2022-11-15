@@ -25,6 +25,18 @@ const HomePage = ({ loggedInUser }) => {
     getUsers();
   });
 
+  const addLikes = async (postId) => {
+    await fetch(
+      `https://cnmaster-shoebill.herokuapp.com/updateLike/${postId}`,
+      {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    );
+  };
+
   return (
     <>
       <h2 className="padding-20">Latest Barks</h2>
@@ -40,6 +52,7 @@ const HomePage = ({ loggedInUser }) => {
                   key={post._id}
                   post={post}
                   loggedInUser={loggedInUser}
+                  addLikes={addLikes}
                 />
               ))}
             </>

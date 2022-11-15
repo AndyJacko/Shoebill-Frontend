@@ -50,6 +50,18 @@ const Profile = ({ isLoggedIn, loggedInUser, onLogout }) => {
     }
   };
 
+  const addLikes = async (postId) => {
+    await fetch(
+      `https://cnmaster-shoebill.herokuapp.com/updateLike/${postId}`,
+      {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    );
+  };
+
   return (
     <>
       <h2 className="padding-20">User Profile</h2>
@@ -94,6 +106,7 @@ const Profile = ({ isLoggedIn, loggedInUser, onLogout }) => {
                   key={post._id}
                   post={post}
                   loggedInUser={loggedInUser}
+                  addLikes={addLikes}
                 />
               ))}
             </div>
