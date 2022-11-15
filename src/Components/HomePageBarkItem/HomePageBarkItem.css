@@ -55,3 +55,7 @@
 .home-page-bark-item-pic {
   margin: 10px 0;
 }
+
+.home-page-bark-item-pic img {
+  width: 100%;
+}
