@@ -26,7 +26,7 @@ const Login = ({ onLogin }) => {
     }
 
     const response = await fetch(
-      `https://cnmaster-shoebill.herokuapp.com/loginUser/`,
+      `${process.env.REACT_APP_REST_API}/loginUser/`,
       {
         method: "POST",
         body: JSON.stringify({ username, password }),

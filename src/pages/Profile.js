@@ -19,7 +19,7 @@ const Profile = ({ isLoggedIn, loggedInUser, onLogout }) => {
   useEffect(() => {
     const getUser = async () => {
       const response = await fetch(
-        `https://cnmaster-shoebill.herokuapp.com/readUserOne/${id}`
+        `${process.env.REACT_APP_REST_API}/readUserOne/${id}`
       );
       const data = await response.json();
 
@@ -35,7 +35,7 @@ const Profile = ({ isLoggedIn, loggedInUser, onLogout }) => {
   const deleteHandler = async () => {
     if (window.confirm("Delete your profile?")) {
       const response = await fetch(
-        `https://cnmaster-shoebill.herokuapp.com/deleteUser/${user._id}`,
+        `${process.env.REACT_APP_REST_API}/deleteUser/${user._id}`,
         {
           method: "DELETE",
           headers: {
@@ -53,15 +53,12 @@ const Profile = ({ isLoggedIn, loggedInUser, onLogout }) => {
   };
 
   const addLikes = async (postId) => {
-    await fetch(
-      `https://cnmaster-shoebill.herokuapp.com/updateLike/${postId}`,
-      {
-        method: "PUT",
-        headers: {
-          "Content-Type": "application/json",
-        },
-      }
-    );
+    await fetch(`${process.env.REACT_APP_REST_API}/updateLike/${postId}`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
   };
 
   return (
