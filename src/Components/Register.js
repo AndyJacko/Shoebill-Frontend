@@ -42,7 +42,7 @@ const Register = ({ onRegister }) => {
     }
 
     const response = await fetch(
-      `https://cnmaster-shoebill.herokuapp.com/createUser/`,
+      `${process.env.REACT_APP_REST_API}/createUser/`,
       {
         method: "POST",
         body: JSON.stringify(newUser),

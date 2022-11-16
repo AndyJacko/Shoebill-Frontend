@@ -12,7 +12,7 @@ const HomePage = ({ loggedInUser }) => {
   useEffect(() => {
     const getUsers = async () => {
       const response = await fetch(
-        `https://cnmaster-shoebill.herokuapp.com/readPost`
+        `${process.env.REACT_APP_REST_API}/readPost`
       );
       const data = await response.json();
 
@@ -26,15 +26,12 @@ const HomePage = ({ loggedInUser }) => {
   });
 
   const addLikes = async (postId) => {
-    await fetch(
-      `https://cnmaster-shoebill.herokuapp.com/updateLike/${postId}`,
-      {
-        method: "PUT",
-        headers: {
-          "Content-Type": "application/json",
-        },
-      }
-    );
+    await fetch(`${process.env.REACT_APP_REST_API}/updateLike/${postId}`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
   };
 
   return (

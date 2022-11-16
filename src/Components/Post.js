@@ -21,7 +21,7 @@ const Post = ({ user }) => {
     }
 
     const response = await fetch(
-      `https://cnmaster-shoebill.herokuapp.com/createPost/`,
+      `${process.env.REACT_APP_REST_API}/createPost/`,
       {
         method: "POST",
         body: JSON.stringify({ user: user._id, postcomment, postpic }),

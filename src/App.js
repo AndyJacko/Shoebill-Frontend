@@ -21,7 +21,7 @@ const App = () => {
   useEffect(() => {
     const getUser = async (cookie) => {
       const response = await fetch(
-        `https://cnmaster-shoebill.herokuapp.com/loginUser/`,
+        `${process.env.REACT_APP_REST_API}/loginUser/`,
         {
           method: "POST",
           headers: {

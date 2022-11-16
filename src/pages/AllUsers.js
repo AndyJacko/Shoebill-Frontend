@@ -12,7 +12,7 @@ const AllUsers = () => {
   useEffect(() => {
     const getUsers = async () => {
       const response = await fetch(
-        `https://cnmaster-shoebill.herokuapp.com/readUser`
+        `${process.env.REACT_APP_REST_API}/readUser`
       );
       const data = await response.json();
 

@@ -23,7 +23,7 @@ const EditProfileForm = ({ loggedInUser }) => {
   useEffect(() => {
     const getUser = async () => {
       const response = await fetch(
-        `https://cnmaster-shoebill.herokuapp.com/readUserOne/${loggedInUser._id}`
+        `${process.env.REACT_APP_REST_API}/readUserOne/${loggedInUser._id}`
       );
       const data = await response.json();
 
@@ -70,7 +70,7 @@ const EditProfileForm = ({ loggedInUser }) => {
     }
 
     const response = await fetch(
-      `https://cnmaster-shoebill.herokuapp.com/updateUser/`,
+      `${process.env.REACT_APP_REST_API}/updateUser/`,
       {
         method: "PUT",
         body: JSON.stringify(newUserDetails),
