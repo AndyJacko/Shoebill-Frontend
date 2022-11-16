@@ -9,7 +9,7 @@ const UserProfileBarkItem = ({ addLikes, loggedInUser, post }) => {
   const deletePostHandler = async () => {
     if (window.confirm("Delete this post?")) {
       const response = await fetch(
-        `https://cnmaster-shoebill.herokuapp.com/deletePost/${post._id}`,
+        `${process.env.REACT_APP_REST_API}/deletePost/${post._id}`,
         {
           method: "DELETE",
           body: JSON.stringify({ userId: post.user._id }),
